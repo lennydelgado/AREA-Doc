@@ -33,8 +33,6 @@ Once this is done, you need to prepare the files to install the dependencies.
 conan install . --output-folder=build --build=missing
 ```
 
----
-
 === "For Linux and MacOS"
 
     To complete the installation of dependencies, execute the following commands. First, navigate to the build directory.
