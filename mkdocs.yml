@@ -1,0 +1,63 @@
+site_name: Tainted R-Type
+
+theme:
+  name: material
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - navigation.tabs
+    - navigation.tracking
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: indigo
+      accent: indigo
+
+markdown_extensions:
+  - pymdownx.extra:
+      toc:
+        permalink: true
+      highlight:
+        linenums: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+
+repo_name: epitech-2026/Tainted-R-Type
+repo_url: https://github.com/EpitechPromo2026/B-CPP-500-MAR-5-1-rtype-theo.liennard
+
+nav:
+- Home:
+  - index.md
+- GameDesign:
+  - Getting started: GameDesign/gameDesign.md
+- GameEngine:
+  - Getting started: GameEngine/gameEngine.md
+- Server:
+  - Getting started: Server/server.md
