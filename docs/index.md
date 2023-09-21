@@ -35,48 +35,46 @@ conan install . --output-folder=build --build=missing
 
 ---
 
-### For Linux and MacOS
+=== "For Linux and MacOS"
 
-To complete the installation of dependencies, execute the following commands. First, navigate to the build directory.
+    To complete the installation of dependencies, execute the following commands. First, navigate to the build directory.
 
-```sh
-cd build
-```
+    ```sh
+    cd build
+    ```
 
-Then, proceed to install the dependencies.
+    Then, proceed to install the dependencies.
 
-```sh
-cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
-```
+    ```sh
+    cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
+    ```
 
-Now, you can initiate the project compilation with the following command:
+    Now, you can initiate the project compilation with the following command:
 
-```sh
-cmake --build .
-```
+    ```sh
+    cmake --build .
+    ```
 
----
+=== "For Windows"
 
-### For Windows
+    To complete the installation of dependencies, execute the following commands. First, navigate to the build directory.
 
-To complete the installation of dependencies, execute the following commands. First, navigate to the build directory.
+    ```sh
+    cd build
+    ```
 
-```sh
-cd build
-```
+    Then, proceed to install the dependencies.
 
-Then, proceed to install the dependencies.
+    ```sh
+    # assuming Visual Studio 15 2017 is your VS version and that it matches your default profile
+    cmake .. -G "Visual Studio 15 2017" -DCMAKE_TOOLCHAIN_FILE=./conan_toolchain.cmake
+    ```
 
-```sh
-# assuming Visual Studio 15 2017 is your VS version and that it matches your default profile
-cmake .. -G "Visual Studio 15 2017" -DCMAKE_TOOLCHAIN_FILE=./conan_toolchain.cmake
-```
+    Now, you can initiate the project compilation with the following command:
 
-Now, you can initiate the project compilation with the following command:
+    !!! info inline end "Note"
+        To execute this command, you must be in the build directory.
 
-!!! info inline end "Note"
-    To execute this command, you must be in the build directory.
-
-```sh
-cmake --build . --config Release
-```
+    ```sh
+    cmake --build . --config Release
+    ```
