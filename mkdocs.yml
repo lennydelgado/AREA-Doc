@@ -19,6 +19,7 @@ theme:
   features:
     - content.code.copy
     - content.code.annotate
+    - content.tabs.link
     - navigation.tabs
     - navigation.tracking
     - navigation.indexes
@@ -44,6 +45,8 @@ markdown_extensions:
         permalink: true
       highlight:
         linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
   - admonition
   - pymdownx.details
   - pymdownx.superfences
