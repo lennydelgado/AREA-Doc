@@ -49,6 +49,9 @@ conan install . --output-folder=build --build=missing
 
     Now, you can initiate the project compilation with the following command:
 
+    !!! info inline end "Note"
+        To execute this command, you must be in the build directory.
+
     ```sh
     cmake --build .
     ```
