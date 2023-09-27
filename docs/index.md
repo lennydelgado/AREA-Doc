@@ -33,6 +33,20 @@ Once this is done, you need to prepare the files to install the dependencies.
 conan install . --output-folder=build --build=missing
 ```
 
+!!! warning
+    You may encounter an error during the execution of this command. If this is the case, you must execute the following command:
+
+    ```sh
+        conan config home
+    ```
+
+    then add the following lines to the global.conf file in folder that was returned by the previous command:
+
+    ```sh
+        tools.system.package_manager:mode=install
+        tools.system.package_manager:sudo=True
+    ```
+
 === "For Linux and MacOS"
 
     To complete the installation of dependencies, execute the following commands. First, navigate to the build directory.
