@@ -64,3 +64,5 @@ nav:
   - Getting started: GameEngine/gameEngine.md
 - Server:
   - Getting started: Server/server.md
+- Network:
+  - Getting started: Network/network.md
