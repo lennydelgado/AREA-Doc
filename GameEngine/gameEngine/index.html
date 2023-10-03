@@ -116,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#getting-started" class="md-skip">
+        <a href="#game-engine" class="md-skip">
           Skip to content
         </a>
       
@@ -606,8 +606,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wip" class="md-nav__link">
-    WIP
+  <a href="#structure" class="md-nav__link">
+    Structure
   </a>
   
 </li>
@@ -785,8 +785,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wip" class="md-nav__link">
-    WIP
+  <a href="#structure" class="md-nav__link">
+    Structure
   </a>
   
 </li>
@@ -809,9 +809,76 @@
   
 
 
-<h1 id="getting-started">Getting started</h1>
-<h2 id="wip">WIP</h2>
-<p>IN Kenan <strong>WIP</strong></p>
+<!-- Game Engine Documentation -->
+
+<h1 id="game-engine">Game Engine</h1>
+<h2 id="structure">Structure</h2>
+<p>Old Diagram
+<pre class="mermaid"><code>stateDiagram-v2
+    direction LR
+    state Game {
+        direction LR
+        [*] --&gt; GameEngine
+        state GameEngine {
+            direction LR
+            [*] --&gt; Registry
+            [*] --&gt; Network
+            state Registry {
+                direction LR
+                Entity --&gt; System: is passed to
+                state Entity {
+                    [Components...]
+                }
+                state System {
+                    void(Registry&amp;,sparseArray&lt;&gt;...)
+                }
+            }
+
+            state Network {
+                []
+            }
+        }
+    }</code></pre></p>
+<p>Real Diagram
+<pre class="mermaid"><code>stateDiagram-v2
+    state Game {
+        direction LR
+        state GameLogic {
+            direction LR
+            player
+            ennemy
+            ...
+        }
+        state GameEngine {
+            state ECS {
+                state Entity {
+                    direction LR
+                    [Components...]
+                }
+                Entity --&gt; System
+            }
+            state Network {
+                direction LR
+                NotDone
+            }
+            state Event {
+                state TODO {
+                    direction LR
+                    onKeyPress
+                    onKeyReleased
+                    isKeyPressed
+                }
+            }
+            state Render {
+                direction LR
+                state SFML {
+                    direction LR
+                    2D
+                    3D
+                }
+            }
+        }
+    }</code></pre></p>
 
 
 
