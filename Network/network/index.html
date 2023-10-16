@@ -694,17 +694,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Getting started
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -715,99 +706,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#descpription" class="md-nav__link">
-    Descpription
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#message-class" class="md-nav__link">
-    message Class
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-message" class="md-nav__link">
-    Create a message
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fill-a-message" class="md-nav__link">
-    Fill a message
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extract-data-from-a-message" class="md-nav__link">
-    Extract data from a message
-  </a>
-  
-    <nav class="md-nav" aria-label="Extract data from a message">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#client" class="md-nav__link">
-    Client
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#server" class="md-nav__link">
-    Server
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#serverstart" class="md-nav__link">
-    Server::start()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#serverstop" class="md-nav__link">
-    Server::stop()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -838,90 +736,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#descpription" class="md-nav__link">
-    Descpription
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#message-class" class="md-nav__link">
-    message Class
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-message" class="md-nav__link">
-    Create a message
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fill-a-message" class="md-nav__link">
-    Fill a message
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extract-data-from-a-message" class="md-nav__link">
-    Extract data from a message
-  </a>
-  
-    <nav class="md-nav" aria-label="Extract data from a message">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#client" class="md-nav__link">
-    Client
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#server" class="md-nav__link">
-    Server
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#serverstart" class="md-nav__link">
-    Server::start()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#serverstop" class="md-nav__link">
-    Server::stop()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -939,14 +755,16 @@
   
 
 
-<h3 id="descpription">Descpription</h3>
+<h1 id="descpription">Descpription</h1>
 <p>This library is used to create a server and a client.
 it provides a simple interface to send and receive any kind of data.</p>
 <p>the network interface is based on the <a href="https://think-async.com/Asio/">asio</a> library.</p>
 <p>it is working on all platforms and is fully costumisable.</p>
-<h3 id="usage">Usage</h3>
+<h1 id="usage">Usage</h1>
 <p>To use the Flib, you have to create custom DataTypes.
-Here is an example:</p>
+Those DataTypes will be used to identify the type of data that you want to send.</p>
+<p>You can add or modify those DataTypes in the file <code>protocol.hpp</code></p>
+<p>Here is an example:</p>
 <p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CustomMsgTypes</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">uint32_t</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="n">PlayerData</span><span class="p">,</span>
@@ -957,9 +775,10 @@ Here is an example:</p>
 </code></pre></div>
 This is basicly an enum that you can use to implement different behaviors.</p>
 <p>Those DataTypes will be used in the Networking implementation. Go to Data Transfer for more details.</p>
-<p>Now, you can send datas using the "message" class</p>
-<p>For the server, you can use messageClient
-and in the client <strong><em>A compléter.</em></strong></p>
+<p>Now, you can send datas using the <code>message</code> class</p>
+<p>For the server, you can use the methode <code>onMessage</code> to implement what you want to do when you receive a message.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">onMessage</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">connection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="message-class">message Class</h2>
 <p><div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">messageHeader</span>
@@ -1005,25 +824,65 @@ Thanks to the <code>id{}</code> syntaxe, it can be any type of data, even struct
 
 <span class="w">    </span><span class="n">msg</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 </code></pre></div>
-As you can see we filled the message in the order <strong>[a -&gt; b -&gt; data]</strong></p>
-<p>And then we extracted the data in the order <strong>[data -&gt; b -&gt; a]</strong></p>
+As you can see we <code>filled</code> the message in the order <strong>[a -&gt; b -&gt; data]</strong></p>
+<p>And then we <code>extracted</code> the data in the order <strong>[data -&gt; b -&gt; a]</strong></p>
 <p>This is because the message structure works like a pile. So the last item we put in the message will be the first one we extract.</p>
 <h3 id="client">Client</h3>
-<h3 id="server">Server</h3>
-<p><div class="highlight"><pre><span></span><code><span class="n">Server</span><span class="o">::</span><span class="n">Server</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">port</span><span class="p">);</span>
+<p><div class="highlight"><pre><span></span><code><span class="n">client_interface</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
 </code></pre></div>
-this method will create a server on the given port</p>
+This method will <code>create</code> a client</p>
+<h2 id="clientconnect">Client::connect()</h2>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">connect</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">port</span><span class="p">)</span>
+</code></pre></div>
+<p>This method will <code>connect</code> the client to the given host and port\
+Returns true if the connection is successful, false otherwise</p>
+<h3 id="server">Server</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">Server</span><span class="o">::</span><span class="n">Server</span><span class="p">(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">port</span><span class="p">);</span>
+</code></pre></div>
+this method will <code>create</code> a server on the given port</p>
 <h2 id="serverstart">Server::start()</h2>
 <p><div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">Server::start</span><span class="p">();</span>
 </code></pre></div>
-this method will start the server</p>
+this method will <code>start</code> the server</p>
 <p>if an error occurs it will throw an exception and print the error message on the error output</p>
 <p>then it will return false</p>
 <p>otherwise it will return true and the server will be running</p>
 <h2 id="serverstop">Server::stop()</h2>
 <p><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Server::stop</span><span class="p">();</span>
 </code></pre></div>
-this method will stop the server</p>
+this method will <code>stop</code> the server</p>
+<h2 id="servermessageclient">Server::messageClient()</h2>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">messageClient</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">connection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">client</span><span class="p">,</span>
+<span class="w">                   </span><span class="k">const</span><span class="w"> </span><span class="n">message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+</code></pre></div>
+<p>This method will <code>sends a message</code> to a connected client.
+If the client is not connected, it removes the client from the list of connections.</p>
+<h2 id="servermessageallclients">Server::messageAllClients()</h2>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">messageAll</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+</code></pre></div>
+<p>This method will <code>sends a message</code> to all connected clients.
+If a client is not connected, it will be removed from the list of connections.</p>
+<h2 id="serverupdate">Server::update()</h2>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">update</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">maxMessages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+</code></pre></div>
+<p>This method will <code>update</code> the server by processing incoming messages
+It take one argument maxMessages.\
+Default value is -1, which means all available messages will be processed.</p>
+<h2 id="serveronmessage">Server::onMessage()</h2>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">onMessage</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">connection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+</code></pre></div>
+<p>This method is called when a <code>message is received</code>.\
+It is a virtual method, so you can override it to implement your own behavior.</p>
+<h2 id="udp-server">Udp Server</h2>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">customServer</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">net</span><span class="o">::</span><span class="n">server</span><span class="o">&lt;</span><span class="n">tcpProtocol</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>Custom server class that inherits from the server class and uses the UDP protocol.\
+You can find the same methods as the server class.\
+The only difference is that the custom server class uses the <code>TCP</code> protocol.</p>
+<h2 id="customserverstartlobby">customServer::startLobby</h2>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">startLobby</span><span class="p">();</span>
+</code></pre></div>
+<p>This method will <code>start</code> the lobby.</p>
 
 
 
