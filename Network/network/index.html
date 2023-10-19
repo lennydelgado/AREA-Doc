@@ -777,11 +777,11 @@ This is basicly an enum that you can use to implement different behaviors.</p>
 <p>Those DataTypes will be used in the Networking implementation. Go to Data Transfer for more details.</p>
 <p>Now, you can send datas using the <code>message</code> class</p>
 <p>For the server, you can use the methode <code>onMessage</code> to implement what you want to do when you receive a message.</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">onMessage</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">connection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">onMessage</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">connection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">Message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="message-class">message Class</h2>
 <p><div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">messageHeader</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">MessageHeader</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="n">T</span><span class="w"> </span><span class="n">id</span><span class="p">{};</span><span class="w"> </span><span class="c1">// {} = default value / constructor for class</span>
 <span class="w">        </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -790,12 +790,12 @@ This is basicly an enum that you can use to implement different behaviors.</p>
 <span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">message</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">messageHeader</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">header</span><span class="p">;</span>
+<span class="w">        </span><span class="n">MessageHeader</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">header</span><span class="p">;</span>
 <span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">body</span><span class="p">;</span>
 <span class="w">    </span><span class="p">};</span>
 </code></pre></div>
 This is the basic structure of a message.
-The <code>messageHeader</code> contains the custom data type that we created earlier.
+The <code>MessageHeader</code> contains the custom data type that we created earlier.
 Thanks to the <code>id{}</code> syntaxe, it can be any type of data, even struct or class (in those cases the constructor will be called by default).</p>
 <h1 id="create-a-message">Create a message</h1>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">net</span><span class="o">::</span><span class="n">message</span><span class="o">&lt;</span><span class="n">CustomMsgTypes</span><span class="o">&gt;</span><span class="w"> </span><span class="n">msg</span><span class="p">;</span>
@@ -853,12 +853,12 @@ this method will <code>start</code> the server</p>
 this method will <code>stop</code> the server</p>
 <h2 id="servermessageclient">Server::messageClient()</h2>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">messageClient</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">connection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">client</span><span class="p">,</span>
-<span class="w">                   </span><span class="k">const</span><span class="w"> </span><span class="n">message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+<span class="w">                   </span><span class="k">const</span><span class="w"> </span><span class="n">Message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
 </code></pre></div>
 <p>This method will <code>sends a message</code> to a connected client.
 If the client is not connected, it removes the client from the list of connections.</p>
 <h2 id="servermessageallclients">Server::messageAllClients()</h2>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">messageAll</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">messageAll</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
 </code></pre></div>
 <p>This method will <code>sends a message</code> to all connected clients.
 If a client is not connected, it will be removed from the list of connections.</p>
@@ -869,7 +869,7 @@ If a client is not connected, it will be removed from the list of connections.</
 It take one argument maxMessages.\
 Default value is -1, which means all available messages will be processed.</p>
 <h2 id="serveronmessage">Server::onMessage()</h2>
-<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">onMessage</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">connection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">onMessage</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">connection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">Message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
 </code></pre></div>
 <p>This method is called when a <code>message is received</code>.\
 It is a virtual method, so you can override it to implement your own behavior.</p>
