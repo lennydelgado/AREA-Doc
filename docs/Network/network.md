@@ -35,14 +35,14 @@ Now, you can send datas using the `message` class
 For the server, you can use the methode `onMessage` to implement what you want to do when you receive a message.
     
 ```cpp
-    virtual void onMessage(std::shared_ptr<connection<T>>& client, message<T>& msg)
+    virtual void onMessage(std::shared_ptr<connection<T>>& client, Message<T>& msg)
 ```
 
 ## message Class
 
 ```cpp
 template <typename T>
-    struct messageHeader
+    struct MessageHeader
     {
         T id{}; // {} = default value / constructor for class
         size_t size = 0;
@@ -51,12 +51,12 @@ template <typename T>
 template <typename T>
     struct message
     {
-        messageHeader<T> header;
+        MessageHeader<T> header;
         std::vector<uint8_t> body;
     };
 ```
 This is the basic structure of a message.
-The `messageHeader` contains the custom data type that we created earlier.
+The `MessageHeader` contains the custom data type that we created earlier.
 Thanks to the `id{}` syntaxe, it can be any type of data, even struct or class (in those cases the constructor will be called by default).
 
 # Create a message
@@ -148,7 +148,7 @@ this method will `stop` the server
 
 ```cpp
 void messageClient(std::shared_ptr<connection<T>> client,
-                   const message<T>& msg)
+                   const Message<T>& msg)
 ```
 
 This method will `sends a message` to a connected client.
@@ -157,7 +157,7 @@ If the client is not connected, it removes the client from the list of connectio
 ## Server::messageAllClients()
 
 ```cpp
-void messageAll(const message<T>& msg)
+void messageAll(const Message<T>& msg)
 ```
 
 This method will `sends a message` to all connected clients.
@@ -176,7 +176,7 @@ Default value is -1, which means all available messages will be processed.
 ## Server::onMessage()
 
 ```cpp
-virtual void onMessage(std::shared_ptr<connection<T>>& client, message<T>& msg)
+virtual void onMessage(std::shared_ptr<connection<T>>& client, Message<T>& msg)
 ```
 
 This method is called when a `message is received`.\
