@@ -1042,16 +1042,11 @@ Expliquez le système de réseau et comment il fonctionne.
 -->
 
 <h2 id="first-steps">First steps</h2>
-<p>To use the game engine you need to have the following dependencies:
-- <a href="https://conan.io/">Conan</a> - Package Manager
-- <a href="https://cmake.org/">CMake</a> - Compiler</p>
-<p>To build the project you need to use the following commands:
-<div class="highlight"><pre><span></span><code>conan<span class="w"> </span>profile<span class="w"> </span>detect<span class="w"> </span>--force
-conan<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>--output-folder<span class="o">=</span>build<span class="w"> </span>--build<span class="o">=</span>missing
-<span class="nb">cd</span><span class="w"> </span>build
-cmake<span class="w"> </span>..<span class="w"> </span>-DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>conan_toolchain.cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
-cmake<span class="w"> </span>--build<span class="w"> </span>.
-</code></pre></div></p>
+<p>To use the game engine you need to have the following dependencies:</p>
+<ul>
+<li><a href="https://conan.io/">Conan</a> - Package Manager</li>
+<li><a href="https://cmake.org/">CMake</a> - Compiler</li>
+</ul>
 <p>Follow the installation instructions on the <a href="https://lennydelgado.github.io/R-Type-Doc/">Installation page</a> and you should have the game engine compiled as a library in the <code>build/GameEngine</code> folder.</p>
 <h2 id="tutorial">Tutorial</h2>
 <p>In this section we will explain how to use the game engine to create a simple game.</p>
