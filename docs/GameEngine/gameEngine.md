@@ -76,17 +76,9 @@ Expliquez le système de réseau et comment il fonctionne.
 ## First steps
 
 To use the game engine you need to have the following dependencies:
+
 - [Conan](https://conan.io/) - Package Manager
 - [CMake](https://cmake.org/) - Compiler
-
-To build the project you need to use the following commands:
-``` bash
-conan profile detect --force
-conan install . --output-folder=build --build=missing
-cd build
-cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
-cmake --build .
-```
 
 Follow the installation instructions on the [Installation page](https://lennydelgado.github.io/R-Type-Doc/) and you should have the game engine compiled as a library in the `build/GameEngine` folder.
 
