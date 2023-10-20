@@ -606,8 +606,91 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
-    Structure
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    Goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-view" class="md-nav__link">
+    Architectural View
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-steps" class="md-nav__link">
+    First steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial" class="md-nav__link">
+    Tutorial
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#include-required-files" class="md-nav__link">
+    Include required files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-own-components" class="md-nav__link">
+    Create your own components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-own-systems" class="md-nav__link">
+    Create your own systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-own-game" class="md-nav__link">
+    Create your own game
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-example" class="md-nav__link">
+    Full example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorscontacts" class="md-nav__link">
+    Authors/Contacts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
   </a>
   
 </li>
@@ -785,8 +868,91 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
-    Structure
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    Goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-view" class="md-nav__link">
+    Architectural View
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-steps" class="md-nav__link">
+    First steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial" class="md-nav__link">
+    Tutorial
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#include-required-files" class="md-nav__link">
+    Include required files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-own-components" class="md-nav__link">
+    Create your own components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-own-systems" class="md-nav__link">
+    Create your own systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-own-game" class="md-nav__link">
+    Create your own game
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-example" class="md-nav__link">
+    Full example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorscontacts" class="md-nav__link">
+    Authors/Contacts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
   </a>
   
 </li>
@@ -812,34 +978,13 @@
 <!-- Game Engine Documentation -->
 
 <h1 id="game-engine">Game Engine</h1>
-<h2 id="structure">Structure</h2>
-<p>Old Diagram
-<pre class="mermaid"><code>stateDiagram-v2
-    direction LR
-    state Game {
-        direction LR
-        [*] --&gt; GameEngine
-        state GameEngine {
-            direction LR
-            [*] --&gt; Registry
-            [*] --&gt; Network
-            state Registry {
-                direction LR
-                Entity --&gt; System: is passed to
-                state Entity {
-                    [Components...]
-                }
-                state System {
-                    void(Registry&amp;,sparseArray&lt;&gt;...)
-                }
-            }
-
-            state Network {
-                []
-            }
-        }
-    }</code></pre></p>
-<p>Real Diagram
+<h2 id="introduction">Introduction</h2>
+<!-- Introduction pour le game engine en anglais -->
+<p>The Game Engine is the main part of the project, it is the part that manages the game loop, the entities, the systems, the events, the rendering and the network.</p>
+<h2 id="goal">Goal</h2>
+<!-- Objectif du game engine pour le projet en anglais -->
+<p>The goal of the game engine is to provide a simple and efficient way to create a game with the ECS architecture it provides and to be able to use it in a networked environment.</p>
+<h2 id="architectural-view">Architectural View</h2>
 <pre class="mermaid"><code>stateDiagram-v2
     state Game {
         direction LR
@@ -878,7 +1023,237 @@
                 }
             }
         }
-    }</code></pre></p>
+    }</code></pre>
+<!--
+## Main systems
+
+### Rendering
+
+Expliquez le système de rendu et comment il fonctionne.
+
+### Event
+
+Expliquez le système d'événement et comment il fonctionne.
+
+### ECS
+
+Expliquez le système ECS et comment il fonctionne.
+
+### Network
+
+Expliquez le système de réseau et comment il fonctionne.
+-->
+
+<h2 id="first-steps">First steps</h2>
+<p>To use the game engine you need to have the following dependencies:
+- <a href="https://conan.io/">Conan</a> - Package Manager
+- <a href="https://cmake.org/">CMake</a> - Compiler</p>
+<p>To build the project you need to use the following commands:
+<div class="highlight"><pre><span></span><code>conan<span class="w"> </span>profile<span class="w"> </span>detect<span class="w"> </span>--force
+conan<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>--output-folder<span class="o">=</span>build<span class="w"> </span>--build<span class="o">=</span>missing
+<span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>..<span class="w"> </span>-DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>conan_toolchain.cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
+cmake<span class="w"> </span>--build<span class="w"> </span>.
+</code></pre></div></p>
+<p>Follow the installation instructions on the <a href="https://lennydelgado.github.io/R-Type-Doc/">Installation page</a> and you should have the game engine compiled as a library in the <code>build/GameEngine</code> folder.</p>
+<h2 id="tutorial">Tutorial</h2>
+<p>In this section we will explain how to use the game engine to create a simple game.</p>
+<h3 id="include-required-files">Include required files</h3>
+<p>To use the game engine you need to include the following files:
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;gameEngine.hpp&quot;</span>
+</code></pre></div></p>
+<h3 id="create-your-own-components">Create your own components</h3>
+<p>The game engine is based on the ECS architecture, so you need to create your own components to use it or use the ones already created.
+For the sake of the example we will create our own components.</p>
+<p>To create a component you just need to create a struct with the properties you want to have in your component.
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Position</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Velocity</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Sprite</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">gameEngine</span><span class="o">::</span><span class="n">Sprite</span><span class="w"> </span><span class="n">sprite</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">Sprite</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sprite</span><span class="p">.</span><span class="n">setTexture</span><span class="p">(</span><span class="n">gameEngine</span><span class="o">::</span><span class="n">Texture</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">setPosition</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sprite</span><span class="p">.</span><span class="n">setPosition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></p>
+<h3 id="create-your-own-systems">Create your own systems</h3>
+<p>The game engine is based on the ECS architecture, so you need to create your own systems to use it or use the ones already created.
+For the sake of the example we will create our own systems.</p>
+<p>To create a system you just need to create a function that takes a <code>GameEngine &amp;</code> as a parameter, a list of components you want to use, some extra parameters if you need them and return void.
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="n">GameEngine</span><span class="w"> </span><span class="o">&amp;</span><span class="n">engine</span><span class="p">,</span><span class="w"> </span><span class="n">SparseArray</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="n">SparseArray</span><span class="o">&lt;</span><span class="n">Velocity</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">velocities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pos</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">positions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">velocities</span><span class="p">.</span><span class="n">has</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">pos</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">velocities</span><span class="p">[</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">].</span><span class="n">x</span><span class="p">;</span>
+<span class="w">            </span><span class="n">pos</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">velocities</span><span class="p">[</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">].</span><span class="n">y</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="n">GameEngine</span><span class="w"> </span><span class="o">&amp;</span><span class="n">engine</span><span class="p">,</span><span class="w"> </span><span class="n">SparseArray</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="n">SparseArray</span><span class="o">&lt;</span><span class="n">Sprite</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sprites</span><span class="p">,</span><span class="w"> </span><span class="n">gameEngine</span><span class="o">::</span><span class="n">RenderWindow</span><span class="w"> </span><span class="o">&amp;</span><span class="n">window</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pos</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">positions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sprites</span><span class="p">.</span><span class="n">has</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">sprites</span><span class="p">[</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">].</span><span class="n">setPosition</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="w">            </span><span class="n">window</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">sprites</span><span class="p">[</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">].</span><span class="n">sprite</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="create-your-own-game">Create your own game</h3>
+<p>To create your own game you first need to register your components and systems to the game engine.
+<div class="highlight"><pre><span></span><code><span class="n">GameEngine</span><span class="w"> </span><span class="n">engine</span><span class="p">;</span>
+<span class="n">gameEngine</span><span class="o">::</span><span class="n">RenderWindow</span><span class="w"> </span><span class="n">window</span><span class="p">(</span><span class="n">gameEngine</span><span class="o">::</span><span class="n">VideoMode</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;GameEngine window&quot;</span><span class="p">);</span>
+
+<span class="n">engine</span><span class="p">.</span><span class="n">registerComponent</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">engine</span><span class="p">.</span><span class="n">registerComponent</span><span class="o">&lt;</span><span class="n">Velocity</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="n">engine</span><span class="p">.</span><span class="n">addSystem</span><span class="o">&lt;</span><span class="n">Position</span><span class="p">,</span><span class="w"> </span><span class="n">Velocity</span><span class="o">&gt;</span><span class="p">(</span><span class="n">move</span><span class="p">);</span>
+<span class="n">engine</span><span class="p">.</span><span class="n">addSystem</span><span class="o">&lt;</span><span class="n">Position</span><span class="p">,</span><span class="w"> </span><span class="n">Sprite</span><span class="o">&gt;</span><span class="p">(</span><span class="n">render</span><span class="p">,</span><span class="w"> </span><span class="n">window</span><span class="p">);</span>
+</code></pre></div></p>
+<p>Then you need to create your entities and add them to the game engine.
+<div class="highlight"><pre><span></span><code><span class="n">Entity</span><span class="w"> </span><span class="n">entity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">engine</span><span class="p">.</span><span class="n">spawnEntity</span><span class="p">();</span>
+
+<span class="n">Position</span><span class="w"> </span><span class="n">pos</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span>
+<span class="n">engine</span><span class="p">.</span><span class="n">addComponent</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">);</span>
+
+<span class="n">Velocity</span><span class="w"> </span><span class="n">vel</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
+<span class="n">engine</span><span class="p">.</span><span class="n">addComponent</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">);</span>
+</code></pre></div></p>
+<p>Now that we have setup our entity we can start the game loop.
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">window</span><span class="p">.</span><span class="n">isOpen</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">gameEngine</span><span class="o">::</span><span class="n">Event</span><span class="w"> </span><span class="n">event</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">window</span><span class="p">.</span><span class="n">pollEvent</span><span class="p">(</span><span class="n">event</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">gameEngine</span><span class="o">::</span><span class="n">Event</span><span class="o">::</span><span class="n">Closed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">window</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">window</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">engine</span><span class="p">.</span><span class="n">runSystems</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">window</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>But maybe you want to execute some code based on a tick rate, you can do that by using the <code>setInterval</code> method.
+<div class="highlight"><pre><span></span><code><span class="n">engine</span><span class="p">.</span><span class="n">setInterval</span><span class="p">([]()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World every 1s&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">},</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1000ms = 1s</span>
+</code></pre></div></p>
+<p>Or maybe you want to execute some code only once but after a certain amount of time, you can do that by using the <code>setTimeout</code> method.
+<div class="highlight"><pre><span></span><code><span class="n">engine</span><span class="p">.</span><span class="n">setTimeout</span><span class="p">([]()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World after 10s&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">},</span><span class="w"> </span><span class="mi">10000</span><span class="p">);</span><span class="w"> </span><span class="c1">// 10000ms = 10s</span>
+</code></pre></div></p>
+<h3 id="full-example">Full example</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;gameEngine.hpp&quot;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Position</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Velocity</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Sprite</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">gameEngine</span><span class="o">::</span><span class="n">Sprite</span><span class="w"> </span><span class="n">sprite</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">Sprite</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sprite</span><span class="p">.</span><span class="n">setTexture</span><span class="p">(</span><span class="n">gameEngine</span><span class="o">::</span><span class="n">Texture</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">setPosition</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sprite</span><span class="p">.</span><span class="n">setPosition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="n">GameEngine</span><span class="w"> </span><span class="o">&amp;</span><span class="n">engine</span><span class="p">,</span><span class="w"> </span><span class="n">SparseArray</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="n">SparseArray</span><span class="o">&lt;</span><span class="n">Velocity</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">velocities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pos</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">positions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">velocities</span><span class="p">.</span><span class="n">has</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">pos</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">velocities</span><span class="p">[</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">].</span><span class="n">x</span><span class="p">;</span>
+<span class="w">            </span><span class="n">pos</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">velocities</span><span class="p">[</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">].</span><span class="n">y</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="n">GameEngine</span><span class="w"> </span><span class="o">&amp;</span><span class="n">engine</span><span class="p">,</span><span class="w"> </span><span class="n">SparseArray</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="n">SparseArray</span><span class="o">&lt;</span><span class="n">Sprite</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sprites</span><span class="p">,</span><span class="w"> </span><span class="n">gameEngine</span><span class="o">::</span><span class="n">RenderWindow</span><span class="w"> </span><span class="o">&amp;</span><span class="n">window</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pos</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">positions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sprites</span><span class="p">.</span><span class="n">has</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">sprites</span><span class="p">[</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">].</span><span class="n">setPosition</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="w">            </span><span class="n">window</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">sprites</span><span class="p">[</span><span class="n">pos</span><span class="p">.</span><span class="n">first</span><span class="p">].</span><span class="n">sprite</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">GameEngine</span><span class="w"> </span><span class="n">engine</span><span class="p">;</span>
+<span class="w">    </span><span class="n">gameEngine</span><span class="o">::</span><span class="n">RenderWindow</span><span class="w"> </span><span class="n">window</span><span class="p">(</span><span class="n">gameEngine</span><span class="o">::</span><span class="n">VideoMode</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;GameEngine window&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">engine</span><span class="p">.</span><span class="n">registerComponent</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">engine</span><span class="p">.</span><span class="n">registerComponent</span><span class="o">&lt;</span><span class="n">Velocity</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">engine</span><span class="p">.</span><span class="n">addSystem</span><span class="o">&lt;</span><span class="n">Position</span><span class="p">,</span><span class="w"> </span><span class="n">Velocity</span><span class="o">&gt;</span><span class="p">(</span><span class="n">move</span><span class="p">);</span>
+<span class="w">    </span><span class="n">engine</span><span class="p">.</span><span class="n">addSystem</span><span class="o">&lt;</span><span class="n">Position</span><span class="p">,</span><span class="w"> </span><span class="n">Sprite</span><span class="o">&gt;</span><span class="p">(</span><span class="n">render</span><span class="p">,</span><span class="w"> </span><span class="n">window</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">Entity</span><span class="w"> </span><span class="n">entity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">engine</span><span class="p">.</span><span class="n">spawnEntity</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">pos</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span>
+<span class="w">    </span><span class="n">engine</span><span class="p">.</span><span class="n">addComponent</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">Velocity</span><span class="w"> </span><span class="n">vel</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
+<span class="w">    </span><span class="n">engine</span><span class="p">.</span><span class="n">addComponent</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">engine</span><span class="p">.</span><span class="n">setInterval</span><span class="p">([]()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World every 1s&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1000ms = 1s</span>
+<span class="w">    </span><span class="n">engine</span><span class="p">.</span><span class="n">startTick</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">window</span><span class="p">.</span><span class="n">isOpen</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">gameEngine</span><span class="o">::</span><span class="n">Event</span><span class="w"> </span><span class="n">event</span><span class="p">;</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">window</span><span class="p">.</span><span class="n">pollEvent</span><span class="p">(</span><span class="n">event</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">gameEngine</span><span class="o">::</span><span class="n">Event</span><span class="o">::</span><span class="n">Closed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">window</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">gameEngine</span><span class="o">::</span><span class="n">Event</span><span class="o">::</span><span class="n">KeyPressed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">key</span><span class="p">.</span><span class="n">code</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">gameEngine</span><span class="o">::</span><span class="n">Keyboard</span><span class="o">::</span><span class="n">Escape</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">engine</span><span class="p">.</span><span class="n">setTimeout</span><span class="p">([]()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World after 10s&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">},</span><span class="w"> </span><span class="mi">10000</span><span class="p">);</span><span class="w"> </span><span class="c1">// 10000ms = 10s</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">window</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">engine</span><span class="p">.</span><span class="n">runSystems</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">window</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="authorscontacts">Authors/Contacts</h2>
+<ul>
+<li><a href="https://github.com/Kenan-Blasius">Kenan Blasius</a></li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The game engine is the main part of the project, it is the part that manages the entities, the systems, the events and the rendering.</p>
 
 
 
