@@ -34,22 +34,19 @@ stateDiagram-v2
             }
             state Network {
                 direction LR
-                NotDone
+                ...
             }
             state Event {
-                state TODO {
-                    direction LR
-                    onKeyPress
-                    onKeyReleased
-                    isKeyPressed
-                }
+                direction LR
+                KeyboardEvent
+                MouseEvent
+                WindowEvent
             }
             state Render {
                 direction LR
                 state SFML {
                     direction LR
                     2D
-                    3D
                 }
             }
         }
