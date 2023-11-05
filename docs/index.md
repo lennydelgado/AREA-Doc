@@ -8,88 +8,180 @@ git clone git@github.com:EpitechPromo2026/B-CPP-500-MAR-5-1-rtype-theo.liennard.
 
 Once you have obtained the project, navigate to it to install the dependencies.
 
-## Dependency Installation
+=== "Automatic Installation"
+    === "For Windows"
+        To install the project you can use the following command at the root of the project:
 
-The installation of dependencies varies significantly depending on the operating system used.
+        ```sh
+        ./windowCompile.bat
+        ```
 
-Before proceeding, you need to install **conan**, which is an *open-source* tool that facilitates the installation of external C/C++ libraries.
+        !!! info "Note"
+            if the build folder already exists, use the following command to rebuild the project:
 
-To install it, visit [https://conan.io/downloads](https://conan.io/downloads)
+            ```sh
+            ./windowCompile.bat all
+            ```
 
-Install **conan** according to your operating system or the method you prefer to use.
+        !!! warning
+            You may encounter a conan error during the execution of this command. If this is the case, you must execute the following command:
 
-To verify its installation, you can now execute the following command, which allows **conan** to detect the version of the compiler you are using and several other necessary pieces of information for its operation.
+            ```sh
+            conan config home
+            ```
 
-!!! info inline end "Note"
-    This command must be executed in the project directory, not elsewhere.
+            then add the following lines to the global.conf file in folder that was returned by the previous command:
 
-```sh
-conan profile detect --force
-```
+            ```sh
+            tools.system.package_manager:mode=install
+            tools.system.package_manager:sudo=True
+            ```
 
-Once this is done, you need to prepare the files to install the dependencies.
+        !!! warning
+            If you encounter other errors, try to do a manual installation.
 
-```sh
-conan install . --output-folder=build --build=missing
-```
+    === "For Linux and MacOS"
+        To install the project you can use the following command at the root of the project:
 
-!!! warning
-    You may encounter an error during the execution of this command. If this is the case, you must execute the following command:
+        ```sh
+        ./unixCompile.sh
+        ```
+
+        !!! info "Note"
+            if the build folder already exists, use the following command to rebuild the project:
+
+            ```sh
+            ./unixCompile.sh all
+            ```
+
+        !!! warning
+            You may encounter a conan error during the execution of this command. If this is the case, you must execute the following command:
+
+            ```sh
+            conan config home
+            ```
+
+            then add the following lines to the global.conf file in folder that was returned by the previous command:
+
+            ```sh
+            tools.system.package_manager:mode=install
+            tools.system.package_manager:sudo=True
+            ```
+
+        !!! warning
+            If you encounter other errors, try to do a manual installation.
+
+=== "Manual Installation"
+    ## Dependency Installation
+
+    The installation of dependencies varies significantly depending on the operating system used.
+
+    Before proceeding, you need to install **conan**, which is an *open-source* tool that facilitates the installation of external C/C++ libraries.
+
+    To install it, visit [https://conan.io/downloads](https://conan.io/downloads)
+
+    Install **conan** according to your operating system or the method you prefer to use.
+
+    To verify its installation, you can now execute the following command, which allows **conan** to detect the version of the compiler you are using and several other necessary pieces of information for its operation.
+
+    !!! info inline end "Note"
+        This command must be executed in the project directory, not elsewhere.
 
     ```sh
-        conan config home
+    conan profile detect --force
     ```
 
-    then add the following lines to the global.conf file in folder that was returned by the previous command:
+    Once this is done, you need to prepare the files to install the dependencies.
 
     ```sh
+    conan install . --output-folder=build --build=missing
+    ```
+
+    !!! warning
+        You may encounter an error during the execution of this command. If this is the case, you must execute the following command:
+
+        ```sh
+        conan config home
+        ```
+
+        then add the following lines to the global.conf file in folder that was returned by the previous command:
+
+        ```sh
         tools.system.package_manager:mode=install
         tools.system.package_manager:sudo=True
-    ```
+        ```
 
-=== "For Linux and MacOS"
+    === "For Linux and MacOS"
 
-    To complete the installation of dependencies, execute the following commands. First, navigate to the build directory.
+        To complete the installation of dependencies, execute the following commands. First, proceed to generate the project files.
 
-    ```sh
-    cd build
-    ```
+        ```sh
+        cmake -S . -B ./build --preset conan-release
+        ```
 
-    Then, proceed to install the dependencies.
+        Then, you can initiate the project compilation with the following command:
 
-    ```sh
-    cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
-    ```
+        ```sh
+        cmake --build build
+        ```
 
-    Now, you can initiate the project compilation with the following command:
+    === "For Linux and MacOS (alt)"
 
-    !!! info inline end "Note"
-        To execute this command, you must be in the build directory.
+        To complete the installation of dependencies, execute the following commands. First, navigate to the build directory.
 
-    ```sh
-    cmake --build .
-    ```
+        ```sh
+        cd build
+        ```
 
-=== "For Windows"
+        Then, proceed to install the dependencies.
 
-    To complete the installation of dependencies, execute the following commands. First, navigate to the build directory.
+        ```sh
+        cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
+        ```
 
-    ```sh
-    cd build
-    ```
+        Now, you can initiate the project compilation with the following command:
 
-    Then, proceed to install the dependencies.
+        !!! info inline end "Note"
+            To execute this command, you must be in the build directory.
 
-    ```sh
-    # assuming Visual Studio 15 2017 is your VS version and that it matches your default profile
-    cmake .. -G "Visual Studio 15 2017" -DCMAKE_TOOLCHAIN_FILE=./conan_toolchain.cmake
-    ```
+        ```sh
+        cmake --build .
+        ```
 
-    Now, you can initiate the project compilation with the following command:
+    === "For Windows"
 
-    !!! info inline end "Note"
-        To execute this command, you must be in the build directory.
+        To complete the installation of dependencies, execute the following commands. First, proceed to generate the project files.
 
-    ```sh
-    cmake --build . --config Release
-    ```
+        ```bat
+        cmake -S . -B ./build --preset conan-default
+        ```
+
+        Then, you can initiate the project compilation with the following command:
+
+        ```bat
+        cmake --build build --config Release
+        ```
+
+    === "For Windows (alt)"
+
+        To complete the installation of dependencies, execute the following commands. First, navigate to the build directory.
+
+        ```sh
+        cd build
+        ```
+
+        Then, proceed to install the dependencies.
+
+        ```sh
+        # assuming Visual Studio 15 2017 is your VS version and that it matches your default profile
+        cmake .. -G "Visual Studio 15 2017" -DCMAKE_TOOLCHAIN_FILE=./conan_toolchain.cmake
+        ```
+
+        Now, you can initiate the project compilation with the following command:
+
+        !!! info inline end "Note"
+            To execute this command, you must be in the build directory.
+
+        ```sh
+        cmake --build . --config Release
+        ```
