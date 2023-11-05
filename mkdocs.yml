@@ -76,3 +76,5 @@ nav:
   - Getting started: Server/server.md
 - Network:
   - Getting started: Network/network.md
+- Template:
+  - template.md
