@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../gameEngine/">
       
       
-        <link rel="next" href="../../GameEngine/gameEngine/">
+        <link rel="next" href="../network/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Getting started - Tainted R-Type</title>
+        <title>ECS - Tainted R-Type</title>
       
     
     
@@ -116,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#getting-started" class="md-skip">
+        <a href="#ecs-entity-component-system" class="md-skip">
           Skip to content
         </a>
       
@@ -150,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting started
+              ECS
             
           </span>
         </div>
@@ -272,13 +272,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../GameDesign/gameDesign/" class="md-tabs__link">
           
   
     
@@ -294,11 +292,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../GameEngine/gameEngine/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../gameEngine/" class="md-tabs__link">
           
   
     
@@ -453,8 +453,6 @@
       
   
   
-    
-  
   
     
     
@@ -463,13 +461,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
@@ -482,12 +480,109 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             GameDesign
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GameDesign/gameDesign/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GameEngine
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            GameEngine
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gameEngine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -508,7 +603,7 @@
           
   
   <span class="md-ellipsis">
-    Getting started
+    ECS
   </span>
   
 
@@ -519,7 +614,7 @@
         
   
   <span class="md-ellipsis">
-    Getting started
+    ECS
   </span>
   
 
@@ -541,9 +636,152 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wip" class="md-nav__link">
-    WIP
+  <a href="#what-is-ecs" class="md-nav__link">
+    What is ECS?
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    Component
+  </a>
+  
+    <nav class="md-nav" aria-label="Component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsregistercomponent" class="md-nav__link">
+    GameEngine::ecsRegisterComponent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsgetcomponents" class="md-nav__link">
+    GameEngine::ecsGetComponents
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entity" class="md-nav__link">
+    Entity
+  </a>
+  
+    <nav class="md-nav" aria-label="Entity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsspawnentity" class="md-nav__link">
+    GameEngine::ecsSpawnEntity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsentityfromindex" class="md-nav__link">
+    GameEngine::ecsEntityFromIndex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecskillentity" class="md-nav__link">
+    GameEngine::ecsKillEntity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecskillallentities" class="md-nav__link">
+    GameEngine::ecsKillAllEntities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsaddcomponent" class="md-nav__link">
+    GameEngine::ecsAddComponent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsemplacecomponent" class="md-nav__link">
+    GameEngine::ecsEmplaceComponent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsremovecomponent" class="md-nav__link">
+    GameEngine::ecsRemoveComponent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    System
+  </a>
+  
+    <nav class="md-nav" aria-label="System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsaddsystem" class="md-nav__link">
+    GameEngine::ecsAddSystem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsclearsystems" class="md-nav__link">
+    GameEngine::ecsClearSystems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsrunsystems" class="md-nav__link">
+    GameEngine::ecsRunSystems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsrunsinglesystem" class="md-nav__link">
+    GameEngine::ecsRunSingleSystem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -556,108 +794,13 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    GameEngine
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            GameEngine
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
   
   
     <li class="md-nav__item">
-      <a href="../../GameEngine/gameEngine/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../GameEngine/ecs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ECS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../GameEngine/network/" class="md-nav__link">
+      <a href="../network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -677,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GameEngine/time/" class="md-nav__link">
+      <a href="../time/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -697,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GameEngine/lua/" class="md-nav__link">
+      <a href="../lua/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -717,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GameEngine/json/" class="md-nav__link">
+      <a href="../json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -895,9 +1038,152 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wip" class="md-nav__link">
-    WIP
+  <a href="#what-is-ecs" class="md-nav__link">
+    What is ECS?
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    Component
+  </a>
+  
+    <nav class="md-nav" aria-label="Component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsregistercomponent" class="md-nav__link">
+    GameEngine::ecsRegisterComponent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsgetcomponents" class="md-nav__link">
+    GameEngine::ecsGetComponents
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entity" class="md-nav__link">
+    Entity
+  </a>
+  
+    <nav class="md-nav" aria-label="Entity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsspawnentity" class="md-nav__link">
+    GameEngine::ecsSpawnEntity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsentityfromindex" class="md-nav__link">
+    GameEngine::ecsEntityFromIndex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecskillentity" class="md-nav__link">
+    GameEngine::ecsKillEntity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecskillallentities" class="md-nav__link">
+    GameEngine::ecsKillAllEntities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsaddcomponent" class="md-nav__link">
+    GameEngine::ecsAddComponent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsemplacecomponent" class="md-nav__link">
+    GameEngine::ecsEmplaceComponent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsremovecomponent" class="md-nav__link">
+    GameEngine::ecsRemoveComponent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    System
+  </a>
+  
+    <nav class="md-nav" aria-label="System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsaddsystem" class="md-nav__link">
+    GameEngine::ecsAddSystem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsclearsystems" class="md-nav__link">
+    GameEngine::ecsClearSystems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsrunsystems" class="md-nav__link">
+    GameEngine::ecsRunSystems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineecsrunsinglesystem" class="md-nav__link">
+    GameEngine::ecsRunSingleSystem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -919,9 +1205,90 @@
   
 
 
-<h1 id="getting-started">Getting started</h1>
-<h2 id="wip">WIP</h2>
-<p>IN <strong>WIP</strong></p>
+<h1 id="ecs-entity-component-system">ECS (Entity Component System)</h1>
+<h2 id="what-is-ecs">What is ECS?</h2>
+<p>ECS is a design pattern that is used to make games. It is a way to organize your code in a way that makes it easier to add new features to your game. It is also a way to make your code more efficient.</p>
+<h2 id="methods">Methods</h2>
+<h3 id="component">Component</h3>
+<p>A component is a piece of data that can be attached to an entity. A component can be anything from a position to a velocity to a sprite. A component can also be a group of components.</p>
+<h4 id="gameengineecsregistercomponent">GameEngine::ecsRegisterComponent</h4>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Component</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">ecsRegisterComponent</span><span class="p">();</span>
+</code></pre></div>
+<p>This function registers a component to the game engine. This means that the game engine will be able to use this component.</p>
+<h4 id="gameengineecsgetcomponents">GameEngine::ecsGetComponents</h4>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Component</span><span class="o">&gt;</span>
+<span class="n">SparseArray</span><span class="o">&lt;</span><span class="n">Component</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ecsGetComponents</span><span class="p">();</span>
+</code></pre></div>
+<p>This function returns a reference to the component list of a certain type.</p>
+<h3 id="entity">Entity</h3>
+<p>An entity is an object that has a unique ID and a list of components. An entity can be anything from a player to a bullet to a wall. An entity can also be a group of entities.</p>
+<h4 id="gameengineecsspawnentity">GameEngine::ecsSpawnEntity</h4>
+<div class="highlight"><pre><span></span><code><span class="n">Entity</span><span class="w"> </span><span class="nf">ecsSpawnEntity</span><span class="p">();</span>
+</code></pre></div>
+<p>This function creates a new entity and returns its ID.</p>
+<h4 id="gameengineecsentityfromindex">GameEngine::ecsEntityFromIndex</h4>
+<div class="highlight"><pre><span></span><code><span class="n">Entity</span><span class="w"> </span><span class="nf">ecsEntityFromIndex</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
+</code></pre></div>
+<p>Since the constructor of the Entity class is private, you can't create an entity directly. Instead, you have to use this function to get an entity from its index.</p>
+<p>All entities are implicitly convertable to their index, so you can use this function to get an entity from its index.</p>
+<h4 id="gameengineecskillentity">GameEngine::ecsKillEntity</h4>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">ecsKillEntity</span><span class="p">(</span><span class="n">Entity</span><span class="w"> </span><span class="n">entity</span><span class="p">);</span>
+</code></pre></div>
+<p>This function kills an entity. This means that it will be removed from the game engine and all of its components will be removed from the game engine.</p>
+<h4 id="gameengineecskillallentities">GameEngine::ecsKillAllEntities</h4>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">ecsKillAllEntities</span><span class="p">();</span>
+</code></pre></div>
+<p>This function kills all entities. This means that they will be removed from the game engine and all of their components will be removed from the game engine.</p>
+<p>Useful for when you want to restart the game or you when you leave a menu to go to the game and you want to remove all the entities from the menu.</p>
+<h4 id="gameengineecsaddcomponent">GameEngine::ecsAddComponent</h4>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Component</span><span class="o">&gt;</span>
+<span class="k">typename</span><span class="w"> </span><span class="nc">SparseArray</span><span class="o">&lt;</span><span class="n">Component</span><span class="o">&gt;::</span><span class="n">reference_type</span><span class="w"> </span><span class="n">ecsAddComponent</span><span class="p">(</span><span class="n">Entity</span><span class="w"> </span><span class="n">entity</span><span class="p">,</span><span class="w"> </span><span class="n">Component</span><span class="w"> </span><span class="n">component</span><span class="p">);</span>
+</code></pre></div>
+<p>This function adds a component to an entity. It returns a reference to the component that was added.</p>
+<h4 id="gameengineecsemplacecomponent">GameEngine::ecsEmplaceComponent</h4>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Component</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="k">typename</span><span class="w"> </span><span class="nc">SparseArray</span><span class="o">&lt;</span><span class="n">Component</span><span class="o">&gt;::</span><span class="n">reference_type</span><span class="w"> </span><span class="n">ecsEmplaceComponent</span><span class="p">(</span><span class="n">Entity</span><span class="w"> </span><span class="n">entity</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+</code></pre></div>
+<p>This function emplaces a component to an entity. It returns a reference to the component that was added.</p>
+<h4 id="gameengineecsremovecomponent">GameEngine::ecsRemoveComponent</h4>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Component</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">ecsRemoveComponent</span><span class="p">(</span><span class="n">Entity</span><span class="w"> </span><span class="n">entity</span><span class="p">);</span>
+</code></pre></div>
+<p>This function removes a component from an entity.</p>
+<h3 id="system">System</h3>
+<p>A system is a function that takes a list of components and does something with them. A system can be anything from a movement system to a rendering system to a collision system.</p>
+<h4 id="gameengineecsaddsystem">GameEngine::ecsAddSystem</h4>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Components</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">Function</span><span class="o">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ecsAddSystem</span><span class="p">(</span><span class="n">Function</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">f</span><span class="p">)</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Components</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">Function</span><span class="o">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ecsAddSystem</span><span class="p">(</span><span class="n">Function</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">f</span><span class="p">)</span>
+</code></pre></div>
+<p>This function adds a system to the game engine. It returns a function that you can call to remove the system from the game engine.</p>
+<p>The function that you pass to this function must take a <code>GameEngine &amp;</code> as a parameter, a list of components you want to use and return void.</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Components</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">ExtraParams</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">Function</span><span class="o">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ecsAddSystem</span><span class="p">(</span><span class="n">Function</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">ExtraParams</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<p>This function adds a system to the game engine. It returns a function that you can call to remove the system from the game engine.</p>
+<p>The function that you pass to this function must take a <code>GameEngine &amp;</code> as a parameter, a list of components you want to use, some extra parameters if you need them and return void.</p>
+<h4 id="gameengineecsclearsystems">GameEngine::ecsClearSystems</h4>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">ecsClearSystems</span><span class="p">();</span>
+</code></pre></div>
+<p>This function removes all systems from the game engine.</p>
+<h4 id="gameengineecsrunsystems">GameEngine::ecsRunSystems</h4>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">ecsRunSystems</span><span class="p">();</span>
+</code></pre></div>
+<p>This function runs all systems added to the game engine in the order they were added.</p>
+<h4 id="gameengineecsrunsinglesystem">GameEngine::ecsRunSingleSystem</h4>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Components</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">Function</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">ecsRunSingleSystem</span><span class="p">(</span><span class="n">Function</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">f</span><span class="p">)</span>
+</code></pre></div>
+<p>This function runs a system once. It takes a function that takes a <code>GameEngine &amp;</code> as a parameter, a list of components you want to use and returns void.</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Components</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">ExtraParams</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">Function</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">ecsRunSingleSystem</span><span class="p">(</span><span class="n">Function</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">ExtraParams</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<p>This function runs a system once. It takes a function that takes a <code>GameEngine &amp;</code> as a parameter, a list of components you want to use, some extra parameters if you need them and returns void.</p>
 
 
 
