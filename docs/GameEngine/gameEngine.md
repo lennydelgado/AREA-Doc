@@ -25,28 +25,57 @@ stateDiagram-v2
             ...
         }
         state GameEngine {
-            state ECS {
-                state Entity {
-                    direction LR
-                    [Components...]
+            direction LR
+            state Core {
+                state ECS {
+                    state Entity {
+                        direction LR
+                        [Components...]
+                    }
+                    Entity --> System
                 }
-                Entity --> System
-            }
-            state Network {
-                direction LR
-                ...
-            }
-            state Event {
-                direction LR
-                KeyboardEvent
-                MouseEvent
-                WindowEvent
-            }
-            state Render {
-                direction LR
-                state SFML {
+                state Network {
                     direction LR
-                    2D
+                    ...
+                }
+                state Event {
+                    direction LR
+                    KeyboardEvent
+                    MouseEvent
+                    WindowEvent
+                }
+                state Render {
+                    direction LR
+                    state SFML {
+                        direction LR
+                        2D
+                    }
+                }
+                state SpatialAudio {
+                    direction LR
+                    state SFMLAudio {
+                        direction LR
+                        Audio2D
+                        Audio3D
+                    }
+                }
+            }
+            state Module {
+                state TimeManager {
+                    direction LR
+                    FunctionWithTimeOut
+                    FunctionOnTick
+                }
+                state LuaManager {
+                    direction LR
+                    LoadLuaScripts
+                    AddC++FunctionToLua
+                    RunLuaFunction
+                }
+                state JsonManager {
+                    direction LR
+                    LoadJsonFile
+                    GetInformationFromJson
                 }
             }
         }
