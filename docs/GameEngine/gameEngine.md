@@ -342,11 +342,11 @@ int main() {
 
 To see all the methods available in the game engine, please refer to the corresponding documentation page depending on the module you want to use.
 
-- [ECS](https://lennydelgado.github.io/R-Type-Doc/GameEngine/ECS/)
-- [Network](https://lennydelgado.github.io/R-Type-Doc/GameEngine/Network/)
-- [Time](https://lennydelgado.github.io/R-Type-Doc/GameEngine/Time/)
-- [Lua](https://lennydelgado.github.io/R-Type-Doc/GameEngine/Lua/)
-- [Json](https://lennydelgado.github.io/R-Type-Doc/GameEngine/Json/)
+- [ECS](https://lennydelgado.github.io/R-Type-Doc/GameEngine/ecs/)
+- [Network](https://lennydelgado.github.io/R-Type-Doc/GameEngine/network/)
+- [Time](https://lennydelgado.github.io/R-Type-Doc/GameEngine/time/)
+- [Lua](https://lennydelgado.github.io/R-Type-Doc/GameEngine/lua/)
+- [Json](https://lennydelgado.github.io/R-Type-Doc/GameEngine/json/)
 
 !!! info "Note"
     If you know how to use the method but don't remember it's exact name, all maethod are named with the following convention: `module` + `MethodName`
