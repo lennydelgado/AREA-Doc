@@ -118,6 +118,7 @@ In this section we will explain how to use the game engine to create a simple ga
 ### Include required files
 
 To use the game engine you need to include the following files:
+
 ``` cpp
 #include "gameEngine.hpp"
 ```
@@ -128,6 +129,7 @@ The game engine is based on the ECS architecture, so you need to create your own
 For the sake of the example we will create our own components.
 
 To create a component you just need to create a struct with the properties you want to have in your component.
+
 ``` cpp
 struct Position {
     float x;
@@ -158,6 +160,7 @@ The game engine is based on the ECS architecture, so you need to create your own
 For the sake of the example we will create our own systems.
 
 To create a system you just need to create a function that takes a `GameEngine &` as a parameter, a list of components you want to use, some extra parameters if you need them and return void.
+
 ``` cpp
 void move(GameEngine &engine, SparseArray<Position> &positions, SparseArray<Velocity> &velocities) {
     for (auto &pos : positions) {
@@ -181,29 +184,32 @@ void render(GameEngine &engine, SparseArray<Position> &positions, SparseArray<Sp
 ### Create your own game
 
 To create your own game you first need to register your components and systems to the game engine.
+
 ``` cpp
 GameEngine engine;
 gameEngine::RenderWindow window(gameEngine::VideoMode(1280, 720), "GameEngine window");
 
-engine.registerComponent<Position>();
-engine.registerComponent<Velocity>();
+engine.ecsRegisterComponent<Position>();
+engine.ecsRegisterComponent<Velocity>();
 
-engine.addSystem<Position, Velocity>(move);
-engine.addSystem<Position, Sprite>(render, window);
+engine.ecsAddSystem<Position, Velocity>(move);
+engine.ecsAddSystem<Position, Sprite>(render, window);
 ```
 
 Then you need to create your entities and add them to the game engine.
+
 ``` cpp
-Entity entity = engine.spawnEntity();
+Entity entity = engine.ecsSpawnEntity();
 
 Position pos{0, 0};
-engine.addComponent(entity, pos);
+engine.ecsAddComponent(entity, pos);
 
 Velocity vel{1, 1};
-engine.addComponent(entity, vel);
+engine.ecsAddComponent(entity, vel);
 ```
 
 Now that we have setup our entity we can start the game loop.
+
 ``` cpp
 while (window.isOpen()) {
     gameEngine::Event event;
@@ -215,22 +221,24 @@ while (window.isOpen()) {
 
     window.clear();
 
-    engine.runSystems();
+    engine.ecsRunSystems();
 
     window.display();
 }
 ```
 
 But maybe you want to execute some code based on a tick rate, you can do that by using the `setInterval` method.
+
 ``` cpp
-engine.setInterval([]() {
+engine.timeSetInterval([]() {
     std::cout << "Hello World every 1s" << std::endl;
 }, 1000); // 1000ms = 1s
 ```
 
 Or maybe you want to execute some code only once but after a certain amount of time, you can do that by using the `setTimeout` method.
+
 ``` cpp
-engine.setTimeout([]() {
+engine.timeSetTimeout([]() {
     std::cout << "Hello World after 10s" << std::endl;
 }, 10000); // 10000ms = 10s
 ```
@@ -284,24 +292,24 @@ int main() {
     GameEngine engine;
     gameEngine::RenderWindow window(gameEngine::VideoMode(1280, 720), "GameEngine window");
 
-    engine.registerComponent<Position>();
-    engine.registerComponent<Velocity>();
+    engine.ecsRegisterComponent<Position>();
+    engine.ecsRegisterComponent<Velocity>();
 
-    engine.addSystem<Position, Velocity>(move);
-    engine.addSystem<Position, Sprite>(render, window);
+    engine.ecsAddSystem<Position, Velocity>(move);
+    engine.ecsAddSystem<Position, Sprite>(render, window);
 
-    Entity entity = engine.spawnEntity();
+    Entity entity = engine.ecsSpawnEntity();
 
     Position pos{0, 0};
-    engine.addComponent(entity, pos);
+    engine.ecsAddComponent(entity, pos);
 
     Velocity vel{1, 1};
-    engine.addComponent(entity, vel);
+    engine.ecsAddComponent(entity, vel);
 
-    engine.setInterval([]() {
+    engine.timeSetInterval([]() {
         std::cout << "Hello World every 1s" << std::endl;
     }, 1000); // 1000ms = 1s
-    engine.startTick();
+    engine.timeStartTick();
 
     while (window.isOpen()) {
         gameEngine::Event event;
@@ -312,7 +320,7 @@ int main() {
 
             if (event.type == gameEngine::Event::KeyPressed) {
                 if (event.key.code == gameEngine::Keyboard::Escape) {
-                    engine.setTimeout([]() {
+                    engine.timeSetTimeout([]() {
                         std::cout << "Hello World after 10s" << std::endl;
                     }, 10000); // 10000ms = 10s
                 }
@@ -321,7 +329,7 @@ int main() {
 
         window.clear();
 
-        engine.runSystems();
+        engine.ecsRunSystems();
 
         window.display();
     }
@@ -330,6 +338,19 @@ int main() {
 }
 ```
 
+## Methods
+
+To see all the methods available in the game engine, please refer to the corresponding documentation page depending on the module you want to use.
+
+- [ECS](https://lennydelgado.github.io/R-Type-Doc/GameEngine/ECS/)
+- [Network](https://lennydelgado.github.io/R-Type-Doc/GameEngine/Network/)
+- [Time](https://lennydelgado.github.io/R-Type-Doc/GameEngine/Time/)
+- [Lua](https://lennydelgado.github.io/R-Type-Doc/GameEngine/Lua/)
+- [Json](https://lennydelgado.github.io/R-Type-Doc/GameEngine/Json/)
+
+!!! info "Note"
+    If you know how to use the method but don't remember it's exact name, all maethod are named with the following convention: `module` + `MethodName`
+    So for example if you want to use the `ecsSpawnEntity` method you know that it is in the `ecs` module, so you can just type `ecs` and the auto-completion will show you all the methods available in the `ecs` module.
 
 ## Authors/Contacts
 
