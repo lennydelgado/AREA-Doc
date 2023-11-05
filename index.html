@@ -765,6 +765,65 @@
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:EpitechPromo2026/B-CPP-500-MAR-5-1-rtype-theo.liennard.git
 </code></pre></div>
 <p>Once you have obtained the project, navigate to it to install the dependencies.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Automatic Installation</label><label for="__tabbed_1_2">Manual Installation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">For Windows</label><label for="__tabbed_2_2">For Linux and MacOS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To install the project you can use the following command at the root of the project:</p>
+<div class="highlight"><pre><span></span><code>./windowCompile.bat
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p>if the build folder already exists, use the following command to rebuild the project:</p>
+<div class="highlight"><pre><span></span><code>./windowCompile.bat<span class="w"> </span>all
+</code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You may encounter a conan error during the execution of this command. If this is the case, you must execute the following command:</p>
+<div class="highlight"><pre><span></span><code>conan<span class="w"> </span>config<span class="w"> </span>home
+</code></pre></div>
+<p>then add the following lines to the global.conf file in folder that was returned by the previous command:</p>
+<div class="highlight"><pre><span></span><code>tools.system.package_manager:mode<span class="o">=</span>install
+tools.system.package_manager:sudo<span class="o">=</span>True
+</code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you encounter other errors, try to do a manual installation.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>To install the project you can use the following command at the root of the project:</p>
+<div class="highlight"><pre><span></span><code>./unixCompile.sh
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p>if the build folder already exists, use the following command to rebuild the project:</p>
+<div class="highlight"><pre><span></span><code>./unixCompile.sh<span class="w"> </span>all
+</code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You may encounter a conan error during the execution of this command. If this is the case, you must execute the following command:</p>
+<div class="highlight"><pre><span></span><code>conan<span class="w"> </span>config<span class="w"> </span>home
+</code></pre></div>
+<p>then add the following lines to the global.conf file in folder that was returned by the previous command:</p>
+<div class="highlight"><pre><span></span><code>tools.system.package_manager:mode<span class="o">=</span>install
+tools.system.package_manager:sudo<span class="o">=</span>True
+</code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you encounter other errors, try to do a manual installation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
 <h2 id="dependency-installation">Dependency Installation</h2>
 <p>The installation of dependencies varies significantly depending on the operating system used.</p>
 <p>Before proceeding, you need to install <strong>conan</strong>, which is an <em>open-source</em> tool that facilitates the installation of external C/C++ libraries.</p>
@@ -783,15 +842,23 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>You may encounter an error during the execution of this command. If this is the case, you must execute the following command:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>conan<span class="w"> </span>config<span class="w"> </span>home
+<div class="highlight"><pre><span></span><code>conan<span class="w"> </span>config<span class="w"> </span>home
 </code></pre></div>
 <p>then add the following lines to the global.conf file in folder that was returned by the previous command:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>tools.system.package_manager:mode<span class="o">=</span>install
-<span class="w">    </span>tools.system.package_manager:sudo<span class="o">=</span>True
+<div class="highlight"><pre><span></span><code>tools.system.package_manager:mode<span class="o">=</span>install
+tools.system.package_manager:sudo<span class="o">=</span>True
 </code></pre></div>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">For Linux and MacOS</label><label for="__tabbed_1_2">For Windows</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">For Linux and MacOS</label><label for="__tabbed_3_2">For Linux and MacOS (alt)</label><label for="__tabbed_3_3">For Windows</label><label for="__tabbed_3_4">For Windows (alt)</label></div>
 <div class="tabbed-content">
+<div class="tabbed-block">
+<p>To complete the installation of dependencies, execute the following commands. First, proceed to generate the project files.</p>
+<div class="highlight"><pre><span></span><code>cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>./build<span class="w"> </span>--preset<span class="w"> </span>conan-release
+</code></pre></div>
+<p>Then, you can initiate the project compilation with the following command:</p>
+<div class="highlight"><pre><span></span><code>cmake<span class="w"> </span>--build<span class="w"> </span>build
+</code></pre></div>
+</div>
 <div class="tabbed-block">
 <p>To complete the installation of dependencies, execute the following commands. First, navigate to the build directory.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>build
@@ -805,6 +872,14 @@
 <p>To execute this command, you must be in the build directory.</p>
 </div>
 <div class="highlight"><pre><span></span><code>cmake<span class="w"> </span>--build<span class="w"> </span>.
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>To complete the installation of dependencies, execute the following commands. First, proceed to generate the project files.</p>
+<div class="highlight"><pre><span></span><code>cmake -S . -B ./build --preset conan-default
+</code></pre></div>
+<p>Then, you can initiate the project compilation with the following command:</p>
+<div class="highlight"><pre><span></span><code>cmake --build build --config Release
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -822,6 +897,9 @@ cmake<span class="w"> </span>..<span class="w"> </span>-G<span class="w"> </span
 </div>
 <div class="highlight"><pre><span></span><code>cmake<span class="w"> </span>--build<span class="w"> </span>.<span class="w"> </span>--config<span class="w"> </span>Release
 </code></pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
