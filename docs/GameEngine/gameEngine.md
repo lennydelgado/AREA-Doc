@@ -347,6 +347,7 @@ To see all the methods available in the game engine, please refer to the corresp
 - [Time](https://lennydelgado.github.io/R-Type-Doc/GameEngine/time/)
 - [Lua](https://lennydelgado.github.io/R-Type-Doc/GameEngine/lua/)
 - [Json](https://lennydelgado.github.io/R-Type-Doc/GameEngine/json/)
+- [Asset](https://lennydelgado.github.io/R-Type-Doc/GameEngine/asset/)
 
 !!! info "Note"
     If you know how to use the method but don't remember it's exact name, all maethod are named with the following convention: `module` + `MethodName`
