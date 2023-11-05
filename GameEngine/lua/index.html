@@ -659,6 +659,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lua
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -668,6 +679,94 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-lua-manager" class="md-nav__link">
+    What is the Lua Manager?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gameenginelualoadfile" class="md-nav__link">
+    GameEngine::luaLoadFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineluaaddcppfunction" class="md-nav__link">
+    GameEngine::luaAddCppFunction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineluacallfunction" class="md-nav__link">
+    GameEngine::luaCallFunction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineluagetreturnvalue" class="md-nav__link">
+    GameEngine::luaGetReturnValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineluagetarguement" class="md-nav__link">
+    GameEngine::luaGetArguement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineluasendresult" class="md-nav__link">
+    GameEngine::luaSendResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineluaprintstack" class="md-nav__link">
+    GameEngine::luaPrintStack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -851,6 +950,83 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-lua-manager" class="md-nav__link">
+    What is the Lua Manager?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gameenginelualoadfile" class="md-nav__link">
+    GameEngine::luaLoadFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineluaaddcppfunction" class="md-nav__link">
+    GameEngine::luaAddCppFunction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineluacallfunction" class="md-nav__link">
+    GameEngine::luaCallFunction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineluagetreturnvalue" class="md-nav__link">
+    GameEngine::luaGetReturnValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineluagetarguement" class="md-nav__link">
+    GameEngine::luaGetArguement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineluasendresult" class="md-nav__link">
+    GameEngine::luaSendResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gameengineluaprintstack" class="md-nav__link">
+    GameEngine::luaPrintStack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -868,7 +1044,59 @@
 
 
 <h1 id="lua-manager">Lua Manager</h1>
-<p>WIP</p>
+<h2 id="what-is-the-lua-manager">What is the Lua Manager?</h2>
+<p>The Lua Manager is a module of the Game Engine that allows you to use Lua scripts in your game.</p>
+<h2 id="methods">Methods</h2>
+<h3 id="gameenginelualoadfile">GameEngine::luaLoadFile</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">luaLoadFile</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">path</span><span class="p">);</span>
+</code></pre></div>
+<p>This function loads a Lua script from a file.</p>
+<h3 id="gameengineluaaddcppfunction">GameEngine::luaAddCppFunction</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">luaAddCppFunction</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fromFile</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">lua_CFunction</span><span class="w"> </span><span class="n">func</span><span class="p">);</span>
+</code></pre></div>
+<p>This function add a C++ function to the Lua state of a script so you can call it from the script.</p>
+<p>The parameter <code>fromFile</code> is the path of the script you want to add the function to.</p>
+<p>The parameter <code>name</code> is the name of the function in the script.</p>
+<p>The function <code>func</code> must have the following signature:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">lua_State</span><span class="w"> </span><span class="o">*</span><span class="n">L</span><span class="p">);</span>
+</code></pre></div>
+<p>The int returned by the function is the number of values returned by the function.</p>
+<h3 id="gameengineluacallfunction">GameEngine::luaCallFunction</h3>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">luaCallFunction</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fromFile</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nbReturnValue</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+</code></pre></div>
+<p>This function calls a function from a script.</p>
+<p>The parameter <code>fromFile</code> is the path of the script you want to call the function from.</p>
+<p>The parameter <code>name</code> is the name of the function in the script.</p>
+<p>The parameter <code>nbReturnValue</code> is the number of values returned by the function.</p>
+<p>The parameters <code>args</code> are the arguments passed to the function.</p>
+<h3 id="gameengineluagetreturnvalue">GameEngine::luaGetReturnValue</h3>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">luaGetReturnValue</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fromFile</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="o">&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+</code></pre></div>
+<p>This function gets the return values of the last function called.</p>
+<p>The parameter <code>fromFile</code> is the path of the script you want to get the return values from.</p>
+<p>The parameters <code>args</code> are the variables that will be set with the return values.</p>
+<h3 id="gameengineluagetarguement">GameEngine::luaGetArguement</h3>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">luaGetArguement</span><span class="p">(</span><span class="n">lua_State</span><span class="w"> </span><span class="o">*</span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="o">&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+</code></pre></div>
+<p>This function gets the arguments passed to a function.</p>
+<p>It is used in the C++ functions added to the Lua state to get the arguments passed to the function in the script.</p>
+<p>The parameter <code>L</code> is the Lua state required in the function signature.</p>
+<p>The parameters <code>args</code> are the variables that will be set with the arguments.</p>
+<h3 id="gameengineluasendresult">GameEngine::luaSendResult</h3>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">luaSendResult</span><span class="p">(</span><span class="n">lua_State</span><span class="w"> </span><span class="o">*</span><span class="n">luaState</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="o">&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+</code></pre></div>
+<p>This function sends the return values of a C++ function to the Lua state.</p>
+<p>It is used in the C++ functions added to the Lua state to send the return values of the function to the script.</p>
+<p>The parameter <code>luaState</code> is the Lua state required in the function signature.</p>
+<p>The parameters <code>args</code> are the variables that will be sent as return values.</p>
+<h3 id="gameengineluaprintstack">GameEngine::luaPrintStack</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">luaPrintStack</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fromFile</span><span class="p">);</span>
+</code></pre></div>
+<p>This function prints the Lua stack of a script.</p>
 
 
 
