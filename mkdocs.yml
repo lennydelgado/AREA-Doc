@@ -72,6 +72,7 @@ nav:
   - Time: GameEngine/time.md
   - Lua: GameEngine/lua.md
   - Json: GameEngine/json.md
+  - Asset: GameEngine/asset.md
 - Server:
   - Getting started: Server/server.md
 - Network:
