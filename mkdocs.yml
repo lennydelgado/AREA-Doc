@@ -67,6 +67,11 @@ nav:
   - Getting started: GameDesign/gameDesign.md
 - GameEngine:
   - Getting started: GameEngine/gameEngine.md
+  - ECS: GameEngine/ecs.md
+  - Network: GameEngine/network.md
+  - Time: GameEngine/time.md
+  - Lua: GameEngine/lua.md
+  - Json: GameEngine/json.md
 - Server:
   - Getting started: Server/server.md
 - Network:
