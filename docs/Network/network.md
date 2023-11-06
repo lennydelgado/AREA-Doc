@@ -49,10 +49,14 @@ stateDiagram-v2
 ## Main systems
 
 The main system of the FLib is the Tcp protocol.
-However, the lib is providing a custom client wich uses tcp protocol to connect to clients and to validate them.
+The lib is encapsulated by the GameEngine.
+However, the lib is provided with a custom utilisation wich uses tcp protocol to connect to clients and to validate them.
+For the lobby handler, it uses a tcp protocol to sync the clients.
 Then when the game starts, it uses an udp custom protocol that sends and receive datas faster.
 Those two protocol works together, each one has his own strenght, and his weaknesses.
 Use the tcp to send important informations because the udp is less reliable and could lose the packet.
+However, we implemented a checksum to make sure that the packet is not corrupted.
+if the checksum is corrupted, the packet is discarded.
 
 ## Usage
 
@@ -61,7 +65,7 @@ it is working on all platforms and is fully customisable.
 To use the FLib, you have to create custom DataTypes.
 Those DataTypes will be used to identify the type of data that you want to send.
 
-You can add or modify those DataTypes in the file `protocol.hpp`.
+You can add or modify those DataTypes in the file `protocol.hpp` wich is located in ``GameEngine/inc/Network/``.
 
 Here is an example:
 
@@ -78,11 +82,17 @@ This is basicly an enum that you can use to implement different behaviors.
 Those DataTypes will be used in the Networking implementation. Go to Data Transfer for more details.
 Now all you have to do is to create a client and a server.
 Send datas using the `message` class and upon receive use the message class to extract the datas.
-For the server, you can use the methode `onMessage` to implement what you want to do when you receive a message.
+Now all you have to do is get the incomingTcp and incomingUdp functions to get the incoming messages.
 
 ```cpp
-    virtual void onMessage(std::shared_ptr<connection<T>>& client, Message<T>& msg)
+    net::Queue<net::OwnedMessageUdp<udpProtocol>>& netIncomingUdp();
+
+    net::Queue<net::OwnedMessage<tcpProtocol>>& netIncomingTcp();
 ```
+
+Those functions will return a queue of messages.
+You can use the `pop` method to get the first message of the queue.
+those queues are thread safe, so you can use them in different threads.
 
 ## Here is a simple example of how to use the network library.
 
@@ -107,13 +117,13 @@ This is the basic structure of a message.
 The `MessageHeader` contains the custom data type that we created earlier.
 Thanks to the `id{}` syntaxe, it can be any type of data, even struct or class (in those cases the constructor will be called by default).
 
-### Create a message
+### Create a TCP message
 
 ```cpp
     net::message<CustomMsgTypes> msg;
     msg.header.id = CustomMsgTypes::PlayerData;
 ```
-### Fill a message
+### Fill a TCP message
 
 ```cpp
     int a = 5;
@@ -127,7 +137,7 @@ Thanks to the `id{}` syntaxe, it can be any type of data, even struct or class (
     msg << a << b << data;
 ```
 
-### Extract data from a message
+### Extract data from a TCP message
 
 ```cpp
     int a;
@@ -150,7 +160,7 @@ This is because the message structure works like a pile. So the last item we put
 ## Client
 
 ```cpp
-client_interface() = default;
+    Client::Client();
 ```
 This method will `create` a client
 
@@ -377,6 +387,7 @@ Principals contributors:
 Asio documentation: https://think-async.com/Asio/.
 
 ## Conclusion
+
 
 Résumez les points clés de la documentation de cet aspect et réitérez son importance dans le cadre du projet. Mentionnez d'éventuels développements ou améliorations futurs.
 
