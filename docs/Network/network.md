@@ -157,34 +157,32 @@ And then we `extracted` the data in the order **[data -> b -> a]**
 
 This is because the message structure works like a pile. So the last item we put in the message will be the first one we extract.
 
-## Client
+## Network Class, A client and a server in one class
+
+The network class is a class that contains fonctions to create a client or a server.
+However, it can't be both at the same time.
+
+### Server Creation
 
 ```cpp
-    Client::Client();
+    void netCreateServer(uint16_t port, std::string ipAdress);
 ```
-This method will `create` a client
+This method will `create` a server on the given port and ipAdress
+Upon creation, it will be impossible to call client related methods
 
-### Client::connect()
+### Client Creation and connection
 
 ```cpp
-bool connect(const std::string& host, const size_t port)
+    bool netConnectToServer(const std::string& host, const size_t port);
 ```
-
 This method will `connect` the client to the given host and port\
 Returns true if the connection is successful, false otherwise
+Upon connection, it will be impossible to call server related methods
 
-
-## Server
-
-```cpp
-Server::Server(uint16_t port);
-```
-this method will `create` a server on the given port
-
-### Server::start()
+### Server start
 
 ```cpp
-bool Server::start();
+    bool netStartServer();
 ```
 this method will `start` the server
 
@@ -195,61 +193,92 @@ then it will return false
 otherwise it will return true and the server will be running
 
 
-### Server::stop()
+### Server stop
 
 ```cpp
-void Server::stop();
+    void netStopServer();
 ```
 this method will `stop` the server
 
-### Server::messageClient()
+
+
+## Messaging Methods (Client and Server)
 
 ```cpp
-void messageClient(std::shared_ptr<connection<T>> client,
-                   const Message<T>& msg)
+    void netSendTcpMessage(std::shared_ptr<Connection<tcpProtocol>> peer, const Message<tcpProtocol>& msg);
 ```
 
-This method will `sends a message` to a connected client.
-If the client has disconnected, it removes the client from the list of connections.
+This method will `sends a message` to a connected peer.
+If the client has disconnected, it removes the peer from the list of connections.
 
-### Server::messageAllClients()
+### Messaging all peers
 
 ```cpp
-void messageAll(const Message<T>& msg)
+    void netSendTcpMessageToAll(const Message<tcpProtocol>& msg);
 ```
 
-This method will `sends a message` to all connected clients.
+This method will `sends a message` to all connected peers.
+if a client run this method, it will send the message to the server since it is the only peer connected to the client.
 
-### Server::update()
+
+### Udp Part in Network Class (Client and Server)
+
+The network class is also able to send and receive udp messages.
+It provides a fast but less reliable way to send datas.
+However, the datas are checked with a checksum to make sure that the packet is not corrupted.
+
+### Network::createDataChannel
 
 ```cpp
-void update(size_t maxMessages = -1)
+    void netCreateDataChannel(std::string ipAdress, uint16_t port);
 ```
 
-This method will `update` the server by processing incoming messages
-It take one argument maxMessages.
-Default value is -1, which means all available messages will be processed.
+This method will `create` a udp socket and bind it to the given port and ipAdress.
+It will also create a thread that will listen to incoming messages.
 
-### Server::onMessage()
+
+### Sending Udp Messages
+
+Like the tcp messages, the udp messages are sent using a `udpMessage` class.
 
 ```cpp
-virtual void onMessage(std::shared_ptr<connection<T>>& client, Message<T>& msg)
+    void netUdpSend(net::MessageUdp<udpProtocol>& msg, asio::ip::udp::endpoint peer);
 ```
 
-This method is called when a `message is received`.\
-It is a virtual method, so you can override it to implement your own behavior.
-
-### Udp Server
+This method will `send` a udp message to the given peer.
 
 ```cpp
-class customServer : public net::server<tcpProtocol>
+    void netUdpSendAll(net::MessageUdp<udpProtocol>& msg);
 ```
 
-Custom server class that inherits from the server class and uses the UDP protocol.\
-You can find the same methods as the server class.\
-The only difference is that the custom server class uses the `UDP` protocol.
+This method will `send` a udp message to all peers.
 
-### customServer::startLobby
+### udpMessages
+
+The udp messages are a little bit different from the tcp messages.
+
+```cpp
+    template <typename T>
+    struct MessageHeaderUdp {
+        T id{};
+        size_t size = 0;
+        uint32_t checksum = 0;
+    };
+
+    template <typename T>
+    struct MessageUdp {
+        MessageHeaderUdp<T> header;
+        std::array<uint8_t, MSG_SIZE - sizeof(header)> body = {};
+    };
+    ...
+```
+
+So we have the checksum that we talked about earlier.
+THe other difference that we can see is that the packet size is fixed.
+Currently, the size is 1024 bytes. But it can be changed in the MSG_SIZE macro in the udp_msg file.
+It is because the udp protocol sends a lots of messages per second and we don't want to get fused packets.
+
+### Network::startLobby
 
 ```cpp
 void startLobby();
@@ -257,7 +286,9 @@ void startLobby();
 
 This method will `start` the lobby.
 It will create a udp socket and send it to clients so they can start to communicate on it.
-Then, the server will add the Clients to his list upon reception of the first message
+Then, the server will add the Clients to his list upon reception of the first message.
+This method is called by the server only.
+Then the server will send a message to all clients to tell them to start the lobby.
 
 
 ## Contributing
@@ -279,102 +310,6 @@ Here is a little reminder:
     - The brackets have to be on the same line for statements and on the next line for functions
     - The indentation is 4 spaces
 
-
-## Protocol documentation
-
-{{RFC|1234|auteur=Théo Liennard|titre=A simple custom protocol for the FLib|date=2023-10-23|}}
-
-Here, we will be talking about the protocol used in the custom client and server.
-The protocol is based on the TCP and UDP protocol.
-
-### TCP Protocol
-
-The TCP protocol is used to connect the client to the server and to validate the client.
-It is also used to send important informations because it is more reliable than the UDP protocol.
-
-```cpp
-enum class tcpProtocol : uint8_t
-{
-    Udp,
-    StartRoom
-};
-```
-As you can see, the tcp protocol is really simple.
-It only contains two commands:
-    - Udp: this command is used to tell the client that the server is starting a udp protocol and that the client has to connect to the udp socket.
-        The port and the ip of the udp socket are sent in the message.
-    - StartRoom: this command is used to tell the server that the client want to start a server, this can be used to let clients create their own room.
-
-#### Packages
-
-```cpp
-    struct Message {
-        MessageHeader<T> header;
-        std::vector<uint8_t> body;
-    }
-```
-The header of the message contains the type of the message and the size of the body.
-The body contains the data that we want to send.
-It is sent using a vector of uint8_t.
-
-### UDP Protocol
-
-So, now that game is started and the client is connected to the udp socket,
-we can use the udp protocol to send and receive datas faster than with the tcp protocol.
-
-```cpp
-enum class udpProtocol : uint8_t
-{
-    ConnectedPlayer,
-    CreatePlayer,
-    CreateEnnemy,
-    CreateBullet,
-    Destroy,
-    PlayerMove,
-    Resync,
-};
-```
-As you can see, the udp protocol is more complex than the tcp protocol.
-This is because we need to send more informations.
-
-In this example, the server owns every game objects.
-So the client has to ask the server to create a game object.
-And the server has to send the informations of the game objects to the client.
-It is also necessary to send the informations of the players to the other players.
-
-By using this server side architecture, we can avoid cheating.
-And we can also avoid the problem of synchronisation between the clients.
-The server has the official version of the game, and the clients are just displaying it.
-
-So now that we know why we need to send all those informations, let's see how we do it.
-
-Let's take the example of the player.
-At the beginning of the game, the server send to each player, a `CreatePlayer` message.
-This message contains the informations of the player.
-Then, each time the player moves, the client send a `PlayerMove` message to the server.
-The server will then send a `PlayerMove` message to all the other players.
-
-And so on for the other game objects.
-
-The resync command is used to resync the client with the server.
-It is used x times per second to make sure that the client is up to date.
-
-#### Packages
-
-```cpp
-    #define MSG_SIZE 1024
-
-    struct MessageUdp {
-        MessageHeaderUdp<T> header;
-        std::array<uint8_t, MSG_SIZE - sizeof(header)> body = {};
-    }
-```
-
-The header of the message contains the type of the message.
-The body contains the data that we want to send.
-Here we use an array of uint8_t because the size of the body is fixed.
-Each package has a size of 1024 bytes.
-It is necessary to use a fixed size because the udp protocol does not guarantee the order of the packages.
 
 ## Authors/Contacts
 
