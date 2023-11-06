@@ -323,9 +323,8 @@ Asio documentation: https://think-async.com/Asio/.
 
 ## Conclusion
 
-
-Résumez les points clés de la documentation de cet aspect et réitérez son importance dans le cadre du projet. Mentionnez d'éventuels développements ou améliorations futurs.
-
-Hésitez pas à regarder comment faire dans les fichiers markdown si vous voulait faire des truc un peux sytlé pour savoir les package qu'on a il sont:
-    - [pymdownx](https://facelessuser.github.io/pymdown-extensions/)
-    - [material-mkdocs](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#admonition-icons-octicons)
+So as you have seen, the networking is a really important part of the project.
+it is the part that provide the game to the client and make it playable.
+It is also the part that makes the game multiplayer.
+It was a really interesting part to work on.
+We learned a lot of things about networking and we hope that you will enjoy it too.
