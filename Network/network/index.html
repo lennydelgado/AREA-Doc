@@ -938,22 +938,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-a-message" class="md-nav__link">
-    Create a message
+  <a href="#create-a-tcp-message" class="md-nav__link">
+    Create a TCP message
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fill-a-message" class="md-nav__link">
-    Fill a message
+  <a href="#fill-a-tcp-message" class="md-nav__link">
+    Fill a TCP message
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#extract-data-from-a-message" class="md-nav__link">
-    Extract data from a message
+  <a href="#extract-data-from-a-tcp-message" class="md-nav__link">
+    Extract data from a TCP message
   </a>
   
 </li>
@@ -1291,22 +1291,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-a-message" class="md-nav__link">
-    Create a message
+  <a href="#create-a-tcp-message" class="md-nav__link">
+    Create a TCP message
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fill-a-message" class="md-nav__link">
-    Fill a message
+  <a href="#fill-a-tcp-message" class="md-nav__link">
+    Fill a TCP message
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#extract-data-from-a-message" class="md-nav__link">
-    Extract data from a message
+  <a href="#extract-data-from-a-tcp-message" class="md-nav__link">
+    Extract data from a TCP message
   </a>
   
 </li>
@@ -1544,16 +1544,20 @@ It has to be fast and reliable.</p>
     }</code></pre>
 <h2 id="main-systems">Main systems</h2>
 <p>The main system of the FLib is the Tcp protocol.
-However, the lib is providing a custom client wich uses tcp protocol to connect to clients and to validate them.
+The lib is encapsulated by the GameEngine.
+However, the lib is provided with a custom utilisation wich uses tcp protocol to connect to clients and to validate them.
+For the lobby handler, it uses a tcp protocol to sync the clients.
 Then when the game starts, it uses an udp custom protocol that sends and receive datas faster.
 Those two protocol works together, each one has his own strenght, and his weaknesses.
-Use the tcp to send important informations because the udp is less reliable and could lose the packet.</p>
+Use the tcp to send important informations because the udp is less reliable and could lose the packet.
+However, we implemented a checksum to make sure that the packet is not corrupted.
+if the checksum is corrupted, the packet is discarded.</p>
 <h2 id="usage">Usage</h2>
 <p>the network interface is based on the <a href="https://think-async.com/Asio/">asio</a> library.
 it is working on all platforms and is fully customisable.
 To use the FLib, you have to create custom DataTypes.
 Those DataTypes will be used to identify the type of data that you want to send.</p>
-<p>You can add or modify those DataTypes in the file <code>protocol.hpp</code>.</p>
+<p>You can add or modify those DataTypes in the file <code>protocol.hpp</code> wich is located in <code>GameEngine/inc/Network/</code>.</p>
 <p>Here is an example:</p>
 <p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CustomMsgTypes</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">uint32_t</span>
 <span class="w">    </span><span class="p">{</span>
@@ -1567,9 +1571,14 @@ This is basicly an enum that you can use to implement different behaviors.
 Those DataTypes will be used in the Networking implementation. Go to Data Transfer for more details.
 Now all you have to do is to create a client and a server.
 Send datas using the <code>message</code> class and upon receive use the message class to extract the datas.
-For the server, you can use the methode <code>onMessage</code> to implement what you want to do when you receive a message.</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">onMessage</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">connection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">Message</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+Now all you have to do is get the incomingTcp and incomingUdp functions to get the incoming messages.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">net</span><span class="o">::</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">net</span><span class="o">::</span><span class="n">OwnedMessageUdp</span><span class="o">&lt;</span><span class="n">udpProtocol</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">netIncomingUdp</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">net</span><span class="o">::</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">net</span><span class="o">::</span><span class="n">OwnedMessage</span><span class="o">&lt;</span><span class="n">tcpProtocol</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">netIncomingTcp</span><span class="p">();</span>
 </code></pre></div>
+<p>Those functions will return a queue of messages.
+You can use the <code>pop</code> method to get the first message of the queue.
+those queues are thread safe, so you can use them in different threads.</p>
 <h2 id="here-is-a-simple-example-of-how-to-use-the-network-library">Here is a simple example of how to use the network library.</h2>
 <h3 id="message-class">message Class</h3>
 <p><div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
@@ -1589,11 +1598,11 @@ For the server, you can use the methode <code>onMessage</code> to implement what
 This is the basic structure of a message.
 The <code>MessageHeader</code> contains the custom data type that we created earlier.
 Thanks to the <code>id{}</code> syntaxe, it can be any type of data, even struct or class (in those cases the constructor will be called by default).</p>
-<h3 id="create-a-message">Create a message</h3>
+<h3 id="create-a-tcp-message">Create a TCP message</h3>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">net</span><span class="o">::</span><span class="n">message</span><span class="o">&lt;</span><span class="n">CustomMsgTypes</span><span class="o">&gt;</span><span class="w"> </span><span class="n">msg</span><span class="p">;</span>
 <span class="w">    </span><span class="n">msg</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CustomMsgTypes</span><span class="o">::</span><span class="n">PlayerData</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="fill-a-message">Fill a message</h3>
+<h3 id="fill-a-tcp-message">Fill a TCP message</h3>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14f</span><span class="p">;</span>
 <span class="w">    </span><span class="k">struct</span>
@@ -1604,7 +1613,7 @@ Thanks to the <code>id{}</code> syntaxe, it can be any type of data, even struct
 
 <span class="w">    </span><span class="n">msg</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="extract-data-from-a-message">Extract data from a message</h3>
+<h3 id="extract-data-from-a-tcp-message">Extract data from a TCP message</h3>
 <p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 <span class="w">    </span><span class="k">struct</span>
@@ -1620,7 +1629,7 @@ As you can see we <code>filled</code> the message in the order <strong>[a -&gt; 
 <p>And then we <code>extracted</code> the data in the order <strong>[data -&gt; b -&gt; a]</strong></p>
 <p>This is because the message structure works like a pile. So the last item we put in the message will be the first one we extract.</p>
 <h2 id="client">Client</h2>
-<p><div class="highlight"><pre><span></span><code><span class="n">client_interface</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
+<p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">Client</span><span class="o">::</span><span class="n">Client</span><span class="p">();</span>
 </code></pre></div>
 This method will <code>create</code> a client</p>
 <h3 id="clientconnect">Client::connect()</h3>
