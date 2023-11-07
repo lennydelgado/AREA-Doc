@@ -77,6 +77,11 @@ stateDiagram-v2
                     LoadJsonFile
                     GetInformationFromJson
                 }
+                state AssetManager {
+                    direction LR
+                    AddAsset
+                    GetAsset
+                }
             }
         }
     }
