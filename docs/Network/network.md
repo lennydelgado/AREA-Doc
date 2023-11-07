@@ -303,23 +303,31 @@ Then you can make a pull request and we will review it.
 
 Keep in mind the code style and the naming convention.
 Here is a little reminder:
-    - The variables and methods names are in camelBack
-    - The classes names are in CamelCase
-    - The macros names are in CAPITAL_LETTERS
-    - The namespaces names are in snake_case
-    - The brackets have to be on the same line for statements and on the next line for functions
-    - The indentation is 4 spaces
+
+- The variables and methods names are in camelBack
+
+- The classes names are in CamelCase
+
+- The macros names are in CAPITAL_LETTERS
+
+- The namespaces names are in snake_case
+
+- The brackets have to be on the same line for statements and on the next line for functions
+
+- The indentation is 4 spaces
 
 
 ## Authors/Contacts
 
 Principals contributors:
-    - [TotoFunki] : https://github.com/TotoFunki
-    - [ClementMNT] : https://github.com/ClementMNT
+
+- [TotoFunki](https://github.com/TotoFunki)
+
+- [ClementMNT](https://github.com/ClementMNT)
 
 ## Useful Links
 
-Asio documentation: https://think-async.com/Asio/.
+Asio documentation: [https://think-async.com/Asio/](https://think-async.com/Asio/)
 
 ## Conclusion
 

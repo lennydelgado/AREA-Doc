@@ -64,7 +64,7 @@ nav:
 - Installation:
   - index.md
 - GameDesign:
-  - Getting started: GameDesign/gameDesign.md
+  - R-Type: GameDesign/gameDesign.md
 - GameEngine:
   - Getting started: GameEngine/gameEngine.md
   - ECS: GameEngine/ecs.md
@@ -73,9 +73,6 @@ nav:
   - Lua: GameEngine/lua.md
   - Json: GameEngine/json.md
   - Asset: GameEngine/asset.md
-- Server:
-  - Getting started: Server/server.md
 - Network:
   - Getting started: Network/network.md
-- Template:
-  - template.md
+  - Protocol: Network/protocol.md
