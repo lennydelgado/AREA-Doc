@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../Server/server/">
+        <link rel="prev" href="../../GameEngine/asset/">
       
       
-        <link rel="next" href="../../template/">
+        <link rel="next" href="../protocol/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -312,26 +312,6 @@
         
   
   
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../Server/server/" class="md-tabs__link">
-          
-  
-    
-  
-  Server
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
     
   
   
@@ -344,26 +324,6 @@
     
   
   Network
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../template/" class="md-tabs__link">
-          
-  
-    
-  
-  Template
 
         </a>
       </li>
@@ -517,7 +477,7 @@
         
   
   <span class="md-ellipsis">
-    Getting started
+    R-Type
   </span>
   
 
@@ -735,76 +695,13 @@
       
   
   
+    
+  
   
     
     
       
         
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Server
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Server
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Server/server/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting started
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-    
-    
       
         
       
@@ -816,9 +713,9 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -829,8 +726,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Network
           </label>
@@ -1096,62 +993,17 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Template
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            Template
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
   
   
     <li class="md-nav__item">
-      <a href="../../template/" class="md-nav__link">
+      <a href="../protocol/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    [Aspect du Projet]
+    Protocol
   </span>
   
 
@@ -1624,19 +1476,39 @@ Then the server will send a message to all clients to tell them to start the lob
     - Add new features</p>
 <p>Then you can make a pull request and we will review it.</p>
 <p>Keep in mind the code style and the naming convention.
-Here is a little reminder:
-    - The variables and methods names are in camelBack
-    - The classes names are in CamelCase
-    - The macros names are in CAPITAL_LETTERS
-    - The namespaces names are in snake_case
-    - The brackets have to be on the same line for statements and on the next line for functions
-    - The indentation is 4 spaces</p>
+Here is a little reminder:</p>
+<ul>
+<li>
+<p>The variables and methods names are in camelBack</p>
+</li>
+<li>
+<p>The classes names are in CamelCase</p>
+</li>
+<li>
+<p>The macros names are in CAPITAL_LETTERS</p>
+</li>
+<li>
+<p>The namespaces names are in snake_case</p>
+</li>
+<li>
+<p>The brackets have to be on the same line for statements and on the next line for functions</p>
+</li>
+<li>
+<p>The indentation is 4 spaces</p>
+</li>
+</ul>
 <h2 id="authorscontacts">Authors/Contacts</h2>
-<p>Principals contributors:
-    - [TotoFunki] : https://github.com/TotoFunki
-    - [ClementMNT] : https://github.com/ClementMNT</p>
+<p>Principals contributors:</p>
+<ul>
+<li>
+<p><a href="https://github.com/TotoFunki">TotoFunki</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ClementMNT">ClementMNT</a></p>
+</li>
+</ul>
 <h2 id="useful-links">Useful Links</h2>
-<p>Asio documentation: https://think-async.com/Asio/.</p>
+<p>Asio documentation: <a href="https://think-async.com/Asio/">https://think-async.com/Asio/</a></p>
 <h2 id="conclusion">Conclusion</h2>
 <p>So as you have seen, the networking is a really important part of the project.
 it is the part that provide the game to the client and make it playable.
