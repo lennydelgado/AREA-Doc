@@ -57,7 +57,7 @@ To verify if token is existent, change the switch case in getAcessTokenForServic
 
 Create a file for your services action in the same folder, create a first action with this definition:
 
-    export  default  async  function  handleSericeName(automation) {
+    export  default  async  function  handleSericeName(automation)
 
  Import this function in your automationService and call it in the handleServiceNameAutomation.
  Now, when an action has your service as type, it will call the handle in your service file, and giving the details as arguments.
