@@ -752,6 +752,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#available-automations-and-type-of-services" class="md-nav__link">
+    Available Automations and type of Services
+  </a>
+  
+    <nav class="md-nav" aria-label="Available Automations and type of Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actions-trigger" class="md-nav__link">
+    Actions trigger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reactions" class="md-nav__link">
+    Reactions:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -870,6 +897,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#available-automations-and-type-of-services" class="md-nav__link">
+    Available Automations and type of Services
+  </a>
+  
+    <nav class="md-nav" aria-label="Available Automations and type of Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actions-trigger" class="md-nav__link">
+    Actions trigger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reactions" class="md-nav__link">
+    Reactions:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -893,146 +947,293 @@
 <p>The Area Backend API allows users to configure and execute automation services. Users can manage their account, connect to third-party services, and define automation rules.</p>
 <h2 id="authentication">Authentication</h2>
 <ul>
-<li>Endpoint: <strong>/users/register</strong><ul>
-<li>Method: POST</li>
-<li>Description: Register a new user.</li>
-<li>Parameters: User registration data.</li>
-</ul>
+<li>
+<p>Endpoint: <strong>/users/register</strong></p>
 </li>
-<li>Endpoint: <strong>/users/login</strong><ul>
-<li>Method: POST</li>
-<li>Description: Authenticate a user.</li>
-<li>Parameters: User credentials.</li>
-</ul>
+<li>
+<p>Method: POST</p>
 </li>
-<li>Endpoint: <strong>/users/update-password</strong><ul>
-<li>Method: POST</li>
-<li>Description: Update user password.</li>
-<li>Parameters: New password.</li>
-</ul>
+<li>
+<p>Description: Register a new user.</p>
+</li>
+<li>
+<p>Parameters: User registration data.</p>
+</li>
+<li>
+<p>Endpoint: <strong>/users/login</strong></p>
+</li>
+<li>
+<p>Method: POST</p>
+</li>
+<li>
+<p>Description: Authenticate a user.</p>
+</li>
+<li>
+<p>Parameters: User credentials.</p>
+</li>
+<li>
+<p>Endpoint: <strong>/users/update-password</strong></p>
+</li>
+<li>
+<p>Method: POST</p>
+</li>
+<li>
+<p>Description: Update user password.</p>
+</li>
+<li>
+<p>Parameters: New password.</p>
 </li>
 </ul>
 <h2 id="user-management">User Management</h2>
 <ul>
-<li>Endpoint: <strong>/users/read</strong><ul>
-<li>Method: GET</li>
-<li>Description: Retrieve user information.</li>
-<li>Authentication: Requires valid user token.</li>
-</ul>
+<li>
+<p>Endpoint: <strong>/users/read</strong></p>
+</li>
+<li>
+<p>Method: GET</p>
+</li>
+<li>
+<p>Description: Retrieve user information.</p>
+</li>
+<li>
+<p>Authentication: Requires valid user token.</p>
 </li>
 </ul>
 <h2 id="third-party-integrations">Third-party Integrations</h2>
 <ul>
 <li>
 <p>Endpoint: <strong>/api/spotify-credentials</strong></p>
-<ul>
-<li>Method: GET</li>
-<li>Description: Retrieve Spotify API credentials.</li>
-<li>Authentication: Requires valid user token.</li>
-</ul>
+</li>
+<li>
+<p>Method: GET</p>
+</li>
+<li>
+<p>Description: Retrieve Spotify API credentials.</p>
+</li>
+<li>
+<p>Authentication: Requires valid user token.</p>
 </li>
 <li>
 <p>Endpoint: <strong>/login/google</strong>, <strong>/google/callback</strong>, <strong>/login/facebook</strong>, <strong>/facebook/callback</strong></p>
-<ul>
-<li>Description: OAuth2 login and callback for Google and Facebook.</li>
-</ul>
+</li>
+<li>
+<p>Description: OAuth2 login and callback for Google and Facebook.</p>
 </li>
 </ul>
 <h2 id="email-service">Email Service</h2>
 <ul>
-<li>Endpoint: <strong>/send-email</strong><ul>
-<li>Method: POST</li>
-<li>Description: Send an email.</li>
-<li>Parameters: Email content.</li>
-<li>Authentication: Requires valid user token.</li>
-</ul>
+<li>
+<p>Endpoint: <strong>/send-email</strong></p>
+</li>
+<li>
+<p>Method: POST</p>
+</li>
+<li>
+<p>Description: Send an email.</p>
+</li>
+<li>
+<p>Parameters: Email content.</p>
+</li>
+<li>
+<p>Authentication: Requires valid user token.</p>
 </li>
 </ul>
 <h2 id="services-management">Services Management</h2>
 <ul>
 <li>
 <p>Endpoint: <strong>/services/read</strong></p>
-<ul>
-<li>Method: GET</li>
-<li>Description: Get configured services.</li>
-<li>Authentication: Requires login.</li>
-</ul>
+</li>
+<li>
+<p>Method: GET</p>
+</li>
+<li>
+<p>Description: Get configured services.</p>
+</li>
+<li>
+<p>Authentication: Requires login.</p>
 </li>
 <li>
 <p>Endpoint: <strong>/services/add</strong></p>
-<ul>
-<li>Method: POST</li>
-<li>Description: Add a new service.</li>
-<li>Parameters: Service details.</li>
-<li>Authentication: Requires login.</li>
-</ul>
+</li>
+<li>
+<p>Method: POST</p>
+</li>
+<li>
+<p>Description: Add a new service.</p>
+</li>
+<li>
+<p>Parameters: Service details.</p>
+</li>
+<li>
+<p>Authentication: Requires login.</p>
 </li>
 <li>
 <p>Endpoint: <strong>/services/delete</strong></p>
-<ul>
-<li>Method: PUT</li>
-<li>Description: Delete a service.</li>
-<li>Parameters: Service ID.</li>
-<li>Authentication: Requires login.</li>
-</ul>
+</li>
+<li>
+<p>Method: PUT</p>
+</li>
+<li>
+<p>Description: Delete a service.</p>
+</li>
+<li>
+<p>Parameters: Service ID.</p>
+</li>
+<li>
+<p>Authentication: Requires login.</p>
 </li>
 </ul>
 <h2 id="automations">Automations</h2>
 <ul>
 <li>
 <p>Endpoint: <strong>/automations/create</strong></p>
-<ul>
-<li>Method: POST</li>
-<li>Description: Create a new automation.</li>
-<li>Parameters: Automation details.</li>
-<li>Authentication: Requires valid user token.</li>
-</ul>
+</li>
+<li>
+<p>Method: POST</p>
+</li>
+<li>
+<p>Description: Create a new automation.</p>
+</li>
+<li>
+<p>Parameters: Automation details.</p>
+</li>
+<li>
+<p>Authentication: Requires valid user token.</p>
 </li>
 <li>
 <p>Endpoint: <strong>/automations/read</strong></p>
-<ul>
-<li>Method: GET</li>
-<li>Description: Get user's automation rules.</li>
-<li>Authentication: Requires valid user token.</li>
-</ul>
+</li>
+<li>
+<p>Method: GET</p>
+</li>
+<li>
+<p>Description: Get user's automation rules.</p>
+</li>
+<li>
+<p>Authentication: Requires valid user token.</p>
 </li>
 <li>
 <p>Endpoint: <strong>/automations/modify</strong></p>
-<ul>
-<li>Method: PUT</li>
-<li>Description: Modify an existing automation.</li>
-<li>Parameters: Automation details.</li>
-<li>Authentication: Requires valid user token.</li>
-</ul>
+</li>
+<li>
+<p>Method: PUT</p>
+</li>
+<li>
+<p>Description: Modify an existing automation.</p>
+</li>
+<li>
+<p>Parameters: Automation details.</p>
+</li>
+<li>
+<p>Authentication: Requires valid user token.</p>
 </li>
 <li>
 <p>Endpoint: <strong>/automations/status</strong></p>
-<ul>
-<li>Method: PUT</li>
-<li>Description: Change automation status (enable/disable).</li>
-<li>Parameters: Automation ID and status.</li>
-<li>Authentication: Requires valid user token.</li>
-</ul>
+</li>
+<li>
+<p>Method: PUT</p>
+</li>
+<li>
+<p>Description: Change automation status (enable/disable).</p>
+</li>
+<li>
+<p>Parameters: Automation ID and status.</p>
+</li>
+<li>
+<p>Authentication: Requires valid user token.</p>
 </li>
 <li>
 <p>Endpoint: <strong>/automations/delete</strong></p>
-<ul>
-<li>Method: DELETE</li>
-<li>Description: Delete an automation.</li>
-<li>Parameters: Automation ID.</li>
-<li>Authentication: Requires valid user token.</li>
-</ul>
+</li>
+<li>
+<p>Method: DELETE</p>
+</li>
+<li>
+<p>Description: Delete an automation.</p>
+</li>
+<li>
+<p>Parameters: Automation ID.</p>
+</li>
+<li>
+<p>Authentication: Requires valid user token.</p>
 </li>
 </ul>
 <h2 id="discord-integration">Discord Integration</h2>
 <ul>
-<li>Endpoint: <strong>/discord/oauth2/callback</strong><ul>
-<li>Method: GET</li>
-<li>Description: Callback for Discord OAuth2.</li>
-<li>Authentication: Requires valid user token.</li>
-</ul>
+<li>
+<p>Endpoint: <strong>/discord/oauth2/callback</strong></p>
+</li>
+<li>
+<p>Method: GET</p>
+</li>
+<li>
+<p>Description: Callback for Discord OAuth2.</p>
+</li>
+<li>
+<p>Authentication: Requires valid user token.</p>
 </li>
 </ul>
+<h2 id="available-automations-and-type-of-services">Available Automations and type of Services</h2>
+<h3 id="actions-trigger">Actions trigger</h3>
+<p><strong>Timer:</strong>
+type: ‘timer’<br />
+- Check everyday for a specific hour and minute specified. Will trigger the reactions at the correct time.
+action: ‘everyday’<br />
+detail1: ‘hour’<br />
+detail2: ‘minute’</p>
+<ul>
+<li>Check for a specific day, hour and minute specified.  Will trigger the reactions at the correct time.
+action: ‘day'<br />
+detail1: ‘day’<br />
+detail2: ‘hour’<br />
+detail3: ‘minute’</li>
+</ul>
+<p><strong>Spotify:</strong>
+type: ‘spotify’<br />
+- Am I listening to a song trigger
+action: ‘is_listening’</p>
+<h3 id="reactions">Reactions:</h3>
+<p><strong>Spotify:</strong><br />
+type: 'spotify'
+- Create a playlist
+action: ‘create_playlist’<br />
+detail1: ‘name’<br />
+detail2: true/false (public/private)<br />
+detail3: ‘description’</p>
+<ul>
+<li>
+<p>Add music to playlist<br />
+action: ‘add_to_playlist’<br />
+detail1: ‘playlist name’<br />
+detail2: 'artist of the song'<br />
+detail3: 'name of the song'</p>
+</li>
+<li>
+<p>Delete music from playlist
+action: ‘delete_song_from_playlist’<br />
+detail1: ‘playlist name’<br />
+detail2: ‘artist of the song'<br />
+detail3: 'name of the song’</p>
+</li>
+<li>
+<p>Generate a recommended playlist for the user and append it to an existing playlist
+action: ‘create_recommended’<br />
+detail1: ‘playlist name’</p>
+</li>
+</ul>
+<p><strong>Discord:</strong>
+type: ‘discord’<br />
+- Send a message to a channel<br />
+action: ‘send_message’<br />
+detail1: channel url’<br />
+detail2: ‘the message'</p>
+<p><strong>Gmail:</strong>
+type ‘gmail<br />
+- Send an email using smtp<br />
+action ‘send_email_smtp’<br />
+detail1: ‘destinataire’<br />
+detail2: ‘object’<br />
+detail3: ‘contenu’</p>
 
 
 
