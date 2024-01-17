@@ -9,7 +9,7 @@ Welcome to the documentation for the Area project! This project is divided into 
 To begin with, in order to use the project, you need to clone it using the following command:
 
 ```sh
-git clone git@github.com:EpitechPromo2026/B-CPP-500-MAR-5-1-rtype-theo.liennard.git
+git clone git@github.com:EpitechPromo2026/B-DEV-500-MAR-5-2-area-thibault.avon.git
 ```
 
 Once you have obtained the project, navigate to it to install the dependencies in each part of projet.
@@ -27,6 +27,23 @@ For each part you need to run the command bellow to download the dependancy.
 ```sh
     yarn
 ```
+
+## Guides
+
+API Documentation:
+
+- [API User Guide](Api/userGuide.md)
+- [API Developement Guide](Api/developperGuide.md)
+
+Web Documentation:
+
+- [Web User Guide](Web/userGuide.md)
+- [Web Developement Guide](Web/developperGuide.md)
+
+Mobile Documentation:
+
+- [Mobile User Guide](Mobile/userGuide.md)
+- [Mobile Developement Guide](Mobile/developperGuide.md)
 
 ## Conclusion
 

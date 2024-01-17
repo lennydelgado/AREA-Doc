@@ -1,40 +1,49 @@
-# R-TYPE Game Design
+# Area User Guide
 
-## Introduction
+## Getting Started
 
-The goal of this document is to describe the game design of the R-TYPE project. It will describe the game mechanics, the different entities and the different levels.
+You will arrive on this page:
 
-## Game Mechanics
-### Movement
-| Up    | Arrow Up    |
-|-------|-------------|
-| Down  | Down Arrow  |
-| Left  | Left Arrow  |
-| Right | Right Arrow |
+![Landing Page](../Web/img/landing_page.png)
 
-### Shooting
-| Shoot    | Space   |
-|----------|---------|
+### Register
 
+Register a account. You can use your email adress, Facebook or Gmail:
 
-## Entities
-### Player
-The player is the entity controlled by the player. It can move in all directions and shoot.
+![Register Page](../Web/img/register.png)
 
-### Enemy
-The enemy is an entity that moves in a predefined path and shoots at the player.
+### Dashboard
 
+The dashboard is presented as follows:
 
-## Level Editor
-The level editor is a tool that allows the user to create levels for the game. It will be used to create the levels of the game.
+![Dashbord empty](../Web/img/empty_dashboard.png)
 
-### Controls
-| Left click  | Place and remove an entity |
-|-------------|----------------------------|
-| Left arrow  | Move the camera left       |
-| Right arrow | Move the camera right      |
-| L Key       | Load map                   |
-| S Key       | Save map                   |
+You can create a action in button "Create action"
 
+![Action](../Web/img/action.png)
+
+In this section:
+
+- Name: how you name your action.
+
+- Description: a brief description on your action.
+
+- Reaction: you can add as many reactions as you want. Just press the 'Add new reaction' button.
+
+You can add as many Actions / Reactions as you want, and you can activate or not this actions:
+
+![Some Action](../Web/img/some_actions.png)
+
+Customize it as you wish.
+
+NOTE: you MUST be connected to the various services to perform actions/reactions. See Manages accounts page.
+
+### Manages accounts
+
+This page allows you to connect to the various services offered by Area. It is presented as follows:
+
+![Manages Accounts Page](../Web/img/accounts.png)
+
+Click on "Connect" for uses services.
 
 

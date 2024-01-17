@@ -59,34 +59,16 @@ brew install yarn
 
 ## Installation
 
-1. **Clone the repository:**
-```bash
-git clone git@github.com:EpitechPromo2026/B-DEV-500-MAR-5-2-area-thibault.avon.git
-cd B-DEV-500-MAR-5-2-area-thibault.avon
-```
+After Getting Project in Overview, follow this following steps:
 
-2. **Install dependencies for API:**
-```bash
-cd AREA-API
-yarn
-```
-
-3. **Install dependencies for Web:**
-
-    Open another terminal and past:
-```bash
-cd AREA-WEB
-yarn
-```
-
-4. **Running server:**
+1. **Running server:**
 
     On AREA-API, run:
 ```bash
 yarn dev
 ```
 
-5. **Running Web page:**
+2. **Running Web page:**
 
     On AREA-WEB, run:
 ```bash
