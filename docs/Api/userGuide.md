@@ -1,40 +1,95 @@
-# R-TYPE Game Design
+# Area Backend API Documentation
 
 ## Introduction
 
-The goal of this document is to describe the game design of the R-TYPE project. It will describe the game mechanics, the different entities and the different levels.
+The Area Backend API allows users to configure and execute automation services. Users can manage their account, connect to third-party services, and define automation rules.
 
-## Game Mechanics
-### Movement
-| Up    | Arrow Up    |
-|-------|-------------|
-| Down  | Down Arrow  |
-| Left  | Left Arrow  |
-| Right | Right Arrow |
+## Authentication
+ - Endpoint: **/users/register**
+    - Method: POST
+    - Description: Register a new user.
+    - Parameters: User registration data.
+ - Endpoint: **/users/login**
+    - Method: POST
+    - Description: Authenticate a user.
+    - Parameters: User credentials.
+ - Endpoint: **/users/update-password**
+    - Method: POST
+    - Description: Update user password.
+    - Parameters: New password.
 
-### Shooting
-| Shoot    | Space   |
-|----------|---------|
+## User Management
+ - Endpoint: **/users/read**
+    - Method: GET
+    - Description: Retrieve user information.
+    - Authentication: Requires valid user token.
 
+## Third-party Integrations
+ - Endpoint: **/api/spotify-credentials**
+    - Method: GET
+    - Description: Retrieve Spotify API credentials.
+    - Authentication: Requires valid user token.
 
-## Entities
-### Player
-The player is the entity controlled by the player. It can move in all directions and shoot.
+- Endpoint: **/login/google**, **/google/callback**, **/login/facebook**, **/facebook/callback**
+    - Description: OAuth2 login and callback for Google and Facebook.
 
-### Enemy
-The enemy is an entity that moves in a predefined path and shoots at the player.
+## Email Service
+ - Endpoint: **/send-email**
+    - Method: POST
+    - Description: Send an email.
+    - Parameters: Email content.
+    - Authentication: Requires valid user token.
 
+## Services Management
+ - Endpoint: **/services/read**
+    - Method: GET
+    - Description: Get configured services.
+    - Authentication: Requires login.
 
-## Level Editor
-The level editor is a tool that allows the user to create levels for the game. It will be used to create the levels of the game.
+ - Endpoint: **/services/add**
+    - Method: POST
+    - Description: Add a new service.
+    - Parameters: Service details.
+    - Authentication: Requires login.
 
-### Controls
-| Left click  | Place and remove an entity |
-|-------------|----------------------------|
-| Left arrow  | Move the camera left       |
-| Right arrow | Move the camera right      |
-| L Key       | Load map                   |
-| S Key       | Save map                   |
+- Endpoint: **/services/delete**
+    - Method: PUT
+    - Description: Delete a service.
+    - Parameters: Service ID.
+    - Authentication: Requires login.
 
+## Automations
+ - Endpoint: **/automations/create**
+    - Method: POST
+    - Description: Create a new automation.
+    - Parameters: Automation details.
+    - Authentication: Requires valid user token.
 
+ - Endpoint: **/automations/read**
+    - Method: GET
+    - Description: Get user's automation rules.
+    - Authentication: Requires valid user token.
 
+ - Endpoint: **/automations/modify**
+    - Method: PUT
+    - Description: Modify an existing automation.
+    - Parameters: Automation details.
+    - Authentication: Requires valid user token.
+
+- Endpoint: **/automations/status**
+    - Method: PUT
+    - Description: Change automation status (enable/disable).
+    - Parameters: Automation ID and status.
+    - Authentication: Requires valid user token.
+
+- Endpoint: **/automations/delete**
+    - Method: DELETE
+    - Description: Delete an automation.
+    - Parameters: Automation ID.
+    - Authentication: Requires valid user token.
+
+## Discord Integration
+ - Endpoint: **/discord/oauth2/callback**
+    - Method: GET
+    - Description: Callback for Discord OAuth2.
+    - Authentication: Requires valid user token.
