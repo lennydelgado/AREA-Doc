@@ -4,23 +4,19 @@
 
 You will arrive on this page:
 
-![Landing Page](../Web/img/landing_page.png)
+![Landing Page](img/landing_page.png)
 
 ### Register
 
 Register a account. You can use your email adress, Facebook or Gmail:
 
-![Register Page](../Web/img/register.png)
+![Register Page](img/register.png)
 
 ### Dashboard
 
 The dashboard is presented as follows:
 
-![Dashbord empty](../Web/img/empty_dashboard.png)
-
-You can create a action in button "Create action"
-
-![Action](../Web/img/action.png)
+![Dashbord empty](img/action.png)
 
 In this section:
 
@@ -32,7 +28,7 @@ In this section:
 
 You can add as many Actions / Reactions as you want, and you can activate or not this actions:
 
-![Some Action](../Web/img/some_actions.png)
+![Some Action](img/action_pages.png)
 
 Customize it as you wish.
 
@@ -42,8 +38,6 @@ NOTE: you MUST be connected to the various services to perform actions/reactions
 
 This page allows you to connect to the various services offered by Area. It is presented as follows:
 
-![Manages Accounts Page](../Web/img/accounts.png)
+![Manages Accounts Page](img/accounts.png)
 
 Click on "Connect" for uses services.
-
-
