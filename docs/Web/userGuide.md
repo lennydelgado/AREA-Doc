@@ -22,7 +22,7 @@ This software suite will be broken into three parts :
 
 This user guide is organized into sections, each focusing on a specific aspect of Area. Use the following table of contents to navigate to the topics that interest you the most:
 
-- **[Section 1: Prerequisites](#Prerequisites)**
+- **[Section 1: Prerequisites](#prerequisites)**
 
     Learn how to install dependencies and prerequisites for launch Area web site.
 
@@ -57,7 +57,7 @@ brew install node
 brew install yarn
 ```
 
-# Installation
+## Installation
 
 1. **Clone the repository:**
 ```bash
