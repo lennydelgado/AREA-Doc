@@ -953,7 +953,7 @@ The Cron function called is a parser. It will get very automations from every us
 In the handleAutomation there is the same kind of switch case set up than in services, you simply need to check for the type of action, which is your service name. Create a handleServiceAutomation(automation, accessToken) function to call the handle of your service.</p>
 <p>To verify if token is existent, change the switch case in getAcessTokenForService function. Same thing, add your service and return the token.</p>
 <p>Create a file for your services action in the same folder, create a first action with this definition:</p>
-<pre><code>export  default  async  function  handleSericeName(automation) {
+<pre><code>export  default  async  function  handleSericeName(automation)
 </code></pre>
 <p>Import this function in your automationService and call it in the handleServiceNameAutomation.
  Now, when an action has your service as type, it will call the handle in your service file, and giving the details as arguments.</p>
